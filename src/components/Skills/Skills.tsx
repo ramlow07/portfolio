@@ -12,25 +12,25 @@ const Skills = () => {
 
   const skills = {
     frontend: [
-      { name: 'React', icon: '⚛️', level: 95 },
-      { name: 'TypeScript', icon: '📘', level: 90 },
-      { name: 'JavaScript', icon: '💛', level: 95 },
-      { name: 'HTML/CSS', icon: '🎨', level: 90 },
-      { name: 'Next.js', icon: '▲', level: 85 },
+      { name: 'React', icon: '⚛️', level: 100 },
+      { name: 'TypeScript', icon: '📘', level: 100 },
+      { name: 'JavaScript', icon: '💛', level: 100 },
+      { name: 'HTML/CSS', icon: '🎨', level: 100 },
+      { name: 'Next.js', icon: '▲', level: 100 },
     ],
     backend: [
-      { name: 'Node.js', icon: '🟢', level: 90 },
-      { name: 'Express', icon: '🚂', level: 85 },
-      { name: 'PostgreSQL', icon: '🐘', level: 80 },
-      { name: 'MongoDB', icon: '🍃', level: 80 },
-      { name: 'REST APIs', icon: '🔌', level: 90 },
+      { name: 'Node.js', icon: '🟢', level: 100 },
+      { name: 'Express', icon: '🚂', level: 100 },
+      { name: 'PostgreSQL', icon: '🐘', level: 100 },
+      { name: 'MongoDB', icon: '🍃', level: 100 },
+      { name: 'NestJS', icon: '🦅', level: 100 },
     ],
     tools: [
-      { name: 'Git', icon: '📦', level: 90 },
-      { name: 'Docker', icon: '🐳', level: 75 },
-      { name: 'AWS', icon: '☁️', level: 70 },
-      { name: 'Figma', icon: '🎯', level: 75 },
-      { name: 'VS Code', icon: '💻', level: 95 },
+      { name: 'Git', icon: '📦', level: 100 },
+      { name: 'Docker', icon: '🐳', level: 100 },
+      { name: 'AWS', icon: '☁️', level: 100 },
+      { name: 'Google Cloud', icon: '☁️', level: 100 },
+      { name: 'Redis', icon: '📦', level: 100 },
     ],
   };
 

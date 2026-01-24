@@ -1,7 +1,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import en from './locales/en.json';
-import pt from './locales/pt.json';
+import ptbr from './locales/ptbr.json';
 import de from './locales/de.json';
 
 i18n
@@ -9,7 +9,7 @@ i18n
   .init({
     resources: {
       en: { translation: en },
-      pt: { translation: pt },
+      ptbr: { translation: ptbr },
       de: { translation: de },
     },
     lng: 'en', // default language

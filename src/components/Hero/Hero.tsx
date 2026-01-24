@@ -22,9 +22,7 @@ const Hero = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="hero-image">
-              <div className="image-placeholder">
-                <span className="placeholder-icon">👨‍💻</span>
-              </div>
+              <img src="/profilepic.jpeg" alt="Luam Ramlow" className="profile-pic" />
               <div className="image-glow"></div>
             </div>
           </motion.div>

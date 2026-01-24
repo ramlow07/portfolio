@@ -1,0 +1,48 @@
+{
+  "hero": {
+    "greeting": "Oi, eu sou Luan Ramlow",
+    "title": "Engenheiro Fullstack. Solucionador de Problemas. Poliglota.",
+    "subtitle": "Construindo soluções inovadoras para fintech na DDC Company"
+  },
+  "nav": {
+    "work": "Trabalho",
+    "skills": "Habilidades",
+    "about": "Sobre",
+    "contact": "Contato"
+  },
+  "work": {
+    "title": "Minha Jornada",
+    "subtitle": "Do código ao impacto",
+    "current": "Atualmente",
+    "currentRole": "Engenheiro de Software Fullstack na DDC Company",
+    "currentDescription": "Desenvolvendo soluções de ponta para corretores e investidores em uma startup baseada em São Paulo, trabalhando com tecnologias modernas para resolver desafios financeiros do mundo real.",
+    "journey": "A Jornada",
+    "journeyDescription": "Meu caminho na engenharia de software me levou por continentes. Passei 3 anos na Alemanha, onde aprimorei minhas habilidades e abracei novas culturas. Esta experiência internacional moldou minha abordagem para resolução de problemas e colaboração, tornando-me um engenheiro mais versátil.",
+    "experience": "3+ anos na Alemanha",
+    "languages": "Fluente em 3 idiomas"
+  },
+  "skills": {
+    "title": "Habilidades & Tecnologias",
+    "subtitle": "Ferramentas que uso para construir coisas incríveis",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Ferramentas & Outros"
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "subtitle": "Além do código",
+    "intro": "Sou um engenheiro de software fullstack com paixão por criar soluções elegantes para problemas complexos. Minha jornada me levou do Brasil para a Alemanha e de volta, enriquecendo minha perspectiva e abordagem à tecnologia.",
+    "polyglot": "Como poliglota falando português, inglês e alemão, trago uma perspectiva multicultural única para cada projeto. Meus 3 anos morando na Alemanha me ensinaram mais do que apenas outro idioma—me ensinaram a me adaptar, colaborar entre culturas e pensar globalmente.",
+    "passion": "Quando não estou programando, você me encontrará explorando novas tecnologias, contribuindo para projetos open-source ou compartilhando conhecimento com a comunidade de desenvolvedores. Acredito no aprendizado contínuo e no poder da tecnologia para transformar vidas.",
+    "location": "Baseado no Brasil 🇧🇷 | Morei na Alemanha 🇩🇪"
+  },
+  "contact": {
+    "title": "Vamos Conectar",
+    "subtitle": "Estou sempre aberto a novas oportunidades e colaborações",
+    "whatsapp": "Mensagem no WhatsApp",
+    "email": "Enviar Email",
+    "github": "Ver GitHub",
+    "linkedin": "Conectar no LinkedIn",
+    "languages": "Posso me comunicar em português, inglês e alemão"
+  }
+}

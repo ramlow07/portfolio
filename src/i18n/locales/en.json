@@ -1,0 +1,48 @@
+{
+  "hero": {
+    "greeting": "Hi, I'm Luan Ramlow",
+    "title": "Fullstack Engineer. Problem Solver. Polyglot.",
+    "subtitle": "Building innovative solutions for fintech at DDC Company"
+  },
+  "nav": {
+    "work": "Work",
+    "skills": "Skills",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "work": {
+    "title": "My Journey",
+    "subtitle": "From code to impact",
+    "current": "Currently",
+    "currentRole": "Fullstack Software Engineer at DDC Company",
+    "currentDescription": "Developing cutting-edge solutions for brokers and investors at a São Paulo-based startup, working with modern technologies to solve real-world financial challenges.",
+    "journey": "The Journey",
+    "journeyDescription": "My path in software engineering has taken me across continents. I spent 3 years in Germany, where I honed my skills and embraced new cultures. This international experience shaped my approach to problem-solving and collaboration, making me a more versatile engineer.",
+    "experience": "3+ years in Germany",
+    "languages": "Fluent in 3 languages"
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "subtitle": "Tools I use to build amazing things",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Tools & Others"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Beyond the code",
+    "intro": "I'm a fullstack software engineer with a passion for creating elegant solutions to complex problems. My journey has taken me from Brazil to Germany and back, enriching my perspective and approach to technology.",
+    "polyglot": "As a polyglot speaking Portuguese, English, and German, I bring a unique multicultural perspective to every project. My 3 years living in Germany taught me more than just another language—it taught me how to adapt, collaborate across cultures, and think globally.",
+    "passion": "When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community. I believe in continuous learning and the power of technology to transform lives.",
+    "location": "Based in Brazil 🇧🇷 | Lived in Germany 🇩🇪"
+  },
+  "contact": {
+    "title": "Let's Connect",
+    "subtitle": "I'm always open to new opportunities and collaborations",
+    "whatsapp": "Message on WhatsApp",
+    "email": "Send an Email",
+    "github": "View GitHub",
+    "linkedin": "Connect on LinkedIn",
+    "languages": "I can communicate in Portuguese, English, and German"
+  }
+}

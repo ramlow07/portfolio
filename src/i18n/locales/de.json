@@ -1,0 +1,48 @@
+{
+  "hero": {
+    "greeting": "Hallo, ich bin Luan Ramlow",
+    "title": "Fullstack-Ingenieur. Problemlöser. Polyglott.",
+    "subtitle": "Entwicklung innovativer Lösungen für Fintech bei DDC Company"
+  },
+  "nav": {
+    "work": "Arbeit",
+    "skills": "Fähigkeiten",
+    "about": "Über mich",
+    "contact": "Kontakt"
+  },
+  "work": {
+    "title": "Meine Reise",
+    "subtitle": "Vom Code zur Wirkung",
+    "current": "Aktuell",
+    "currentRole": "Fullstack-Softwareingenieur bei DDC Company",
+    "currentDescription": "Entwicklung modernster Lösungen für Makler und Investoren in einem Startup in São Paulo, Arbeit mit modernen Technologien zur Lösung realer finanzieller Herausforderungen.",
+    "journey": "Die Reise",
+    "journeyDescription": "Mein Weg in der Softwareentwicklung hat mich über Kontinente geführt. Ich habe 3 Jahre in Deutschland verbracht, wo ich meine Fähigkeiten verfeinert und neue Kulturen angenommen habe. Diese internationale Erfahrung hat meinen Ansatz zur Problemlösung und Zusammenarbeit geprägt und mich zu einem vielseitigeren Ingenieur gemacht.",
+    "experience": "3+ Jahre in Deutschland",
+    "languages": "Fließend in 3 Sprachen"
+  },
+  "skills": {
+    "title": "Fähigkeiten & Technologien",
+    "subtitle": "Werkzeuge, die ich verwende, um großartige Dinge zu bauen",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Werkzeuge & Andere"
+  },
+  "about": {
+    "title": "Über Mich",
+    "subtitle": "Jenseits des Codes",
+    "intro": "Ich bin ein Fullstack-Softwareingenieur mit einer Leidenschaft für die Entwicklung eleganter Lösungen für komplexe Probleme. Meine Reise hat mich von Brasilien nach Deutschland und zurück geführt und meine Perspektive und meinen Ansatz zur Technologie bereichert.",
+    "polyglot": "Als Polyglott, der Portugiesisch, Englisch und Deutsch spricht, bringe ich eine einzigartige multikulturelle Perspektive in jedes Projekt ein. Meine 3 Jahre in Deutschland haben mir mehr als nur eine weitere Sprache beigebracht—sie haben mir beigebracht, mich anzupassen, kulturübergreifend zusammenzuarbeiten und global zu denken.",
+    "passion": "Wenn ich nicht programmiere, finden Sie mich beim Erkunden neuer Technologien, beim Beitragen zu Open-Source-Projekten oder beim Teilen von Wissen mit der Entwickler-Community. Ich glaube an kontinuierliches Lernen und die Kraft der Technologie, Leben zu verändern.",
+    "location": "Ansässig in Brasilien 🇧🇷 | Lebte in Deutschland 🇩🇪"
+  },
+  "contact": {
+    "title": "Lass uns verbinden",
+    "subtitle": "Ich bin immer offen für neue Möglichkeiten und Zusammenarbeit",
+    "whatsapp": "Nachricht auf WhatsApp",
+    "email": "E-Mail senden",
+    "github": "GitHub ansehen",
+    "linkedin": "Auf LinkedIn verbinden",
+    "languages": "Ich kann auf Portugiesisch, Englisch und Deutsch kommunizieren"
+  }
+}

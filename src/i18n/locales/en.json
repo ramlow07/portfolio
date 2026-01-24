@@ -15,11 +15,12 @@
     "subtitle": "From code to impact",
     "current": "Currently",
     "currentRole": "Fullstack Software Engineer at DDC Company",
-    "currentDescription": "Developing cutting-edge solutions for brokers and investors at a São Paulo-based startup, working with modern technologies to solve real-world financial challenges.",
     "journey": "The Journey",
-    "journeyDescription": "My path in software engineering has taken me across continents. I spent 3 years in Germany, where I honed my skills and embraced new cultures. This international experience shaped my approach to problem-solving and collaboration, making me a more versatile engineer.",
+    "currentDescription": "Developing cutting-edge solutions for brokers and investors at a São Paulo-based startup. Building solutions that impact lives through technology.",
+    "journeyDescription": "My software engineering journey began in 2021 while living in Germany. What started as curiosity turned into passion, leading me to transition my career into software development. Today, at DDC Company, I combine my technical skills with my multicultural experience to create solutions that connect markets. I've contributed to projects for clients in Brazil, Germany, and the United Kingdom.",
     "experience": "3+ years in Germany",
-    "languages": "Fluent in 3 languages"
+    "languages": "Fluent in 3 languages",
+    "programming": "Since 2021"
   },
   "skills": {
     "title": "Skills & Technologies",

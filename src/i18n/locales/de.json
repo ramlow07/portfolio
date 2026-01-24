@@ -1,7 +1,7 @@
 {
   "hero": {
-    "greeting": "Hallo, ich bin Luan Ramlow",
-    "title": "Fullstack-Ingenieur. Problemlöser. Polyglott.",
+    "greeting": "Hallo, ich bin Luam Ramlow",
+    "title": "Fullstack Engineer. Problemlöser. Polyglott.",
     "subtitle": "Entwicklung innovativer Lösungen für Fintech bei DDC Company"
   },
   "nav": {
@@ -14,12 +14,13 @@
     "title": "Meine Reise",
     "subtitle": "Vom Code zur Wirkung",
     "current": "Aktuell",
-    "currentRole": "Fullstack-Softwareingenieur bei DDC Company",
-    "currentDescription": "Entwicklung modernster Lösungen für Makler und Investoren in einem Startup in São Paulo, Arbeit mit modernen Technologien zur Lösung realer finanzieller Herausforderungen.",
+    "currentRole": "Fullstack Software Engineer bei DDC Company",
     "journey": "Die Reise",
-    "journeyDescription": "Mein Weg in der Softwareentwicklung hat mich über Kontinente geführt. Ich habe 3 Jahre in Deutschland verbracht, wo ich meine Fähigkeiten verfeinert und neue Kulturen angenommen habe. Diese internationale Erfahrung hat meinen Ansatz zur Problemlösung und Zusammenarbeit geprägt und mich zu einem vielseitigeren Ingenieur gemacht.",
+    "currentDescription": "Entwicklung modernster Lösungen für Makler und Investoren in einem Startup in São Paulo. Entwicklung von Lösungen, die Leben durch Technologie beeinflussen.",
+    "journeyDescription": "Meine Reise in der Softwareentwicklung begann 2021, als ich in Deutschland lebte. Was als Neugier begann, verwandelte sich in Leidenschaft und führte mich dazu, meine Karriere in die Softwareentwicklung zu verlagern. Heute kombiniere ich bei DDC Company meine technischen Fähigkeiten mit meiner multikulturellen Erfahrung, um Lösungen zu schaffen, die Märkte verbinden. Ich habe zu Projekten für Kunden in Brasilien, Deutschland und dem Vereinigten Königreich beigetragen.",
     "experience": "3+ Jahre in Deutschland",
-    "languages": "Fließend in 3 Sprachen"
+    "languages": "Fließend in 3 Sprachen",
+    "programming": "Seit 2021"
   },
   "skills": {
     "title": "Fähigkeiten & Technologien",

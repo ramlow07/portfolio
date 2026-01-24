@@ -1,0 +1,49 @@
+{
+  "hero": {
+    "greeting": "Hallo, ich bin Luam Ramlow",
+    "title": "Fullstack Engineer. Problemlöser. Polyglott.",
+    "subtitle": "Entwicklung innovativer Lösungen für Fintech bei DDC Company"
+  },
+  "nav": {
+    "work": "Arbeit",
+    "skills": "Fähigkeiten",
+    "about": "Über mich",
+    "contact": "Kontakt"
+  },
+  "work": {
+    "title": "Meine Reise",
+    "subtitle": "Vom Code zur Wirkung",
+    "current": "Aktuell",
+    "currentRole": "Fullstack Software Engineer bei DDC Company",
+    "journey": "Die Reise",
+    "currentDescription": "Entwicklung modernster Lösungen für Makler und Investoren in einem Startup in São Paulo. Entwicklung von Lösungen, die Leben durch Technologie beeinflussen.",
+    "journeyDescription": "Meine Reise in der Softwareentwicklung begann 2021, als ich in Deutschland lebte. Was als Neugier begann, verwandelte sich in Leidenschaft und führte mich dazu, meine Karriere in die Softwareentwicklung zu verlagern. Heute kombiniere ich bei DDC Company meine technischen Fähigkeiten mit meiner multikulturellen Erfahrung, um Lösungen zu schaffen, die Märkte verbinden. Ich habe zu Projekten für Kunden in Brasilien, Deutschland und dem Vereinigten Königreich beigetragen.",
+    "experience": "3+ Jahre in Deutschland",
+    "languages": "Fließend in 3 Sprachen",
+    "programming": "Seit 2021"
+  },
+  "skills": {
+    "title": "Fähigkeiten & Technologien",
+    "subtitle": "Werkzeuge, die ich verwende, um großartige Dinge zu bauen",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Werkzeuge & Andere"
+  },
+  "about": {
+    "title": "Über Mich",
+    "subtitle": "Jenseits des Codes",
+    "intro": "Ich bin ein Fullstack-Softwareingenieur, der glaubt, dass großartiger Code mit großartigem Denken beginnt. Ich konzentriere mich darauf, Geschäftsanforderungen zu verstehen, strategische Architekturentscheidungen zu treffen und Lösungen zu entwickeln, die echten Mehrwert liefern. Für mich geht es beim Engineering um das Lösen von Problemen—nicht nur ums Schreiben von Code.",
+    "polyglot": "Als Polyglott, der Portugiesisch, Englisch und Deutsch spricht, bringe ich eine einzigartige multikulturelle Perspektive in jedes Projekt ein. Meine 3 Jahre in Deutschland haben mir mehr als nur eine weitere Sprache beigebracht—sie haben mir beigebracht, mich anzupassen, kulturübergreifend zusammenzuarbeiten und global zu denken.",
+    "passion": "Außerhalb der Arbeit bin ich Vater und engagierter Brazilian Jiu-Jitsu-Praktizierender. Das Training hält meinen Geist scharf und meine Problemlösungsinstinkte geschärft. Die Disziplin von der Matte überträgt sich direkt auf meinen Code. Kontinuierliche Verbesserung ist ein Lebensstil, nicht nur ein Karriereziel.",
+    "location": "Ansässig in Brasilien 🇧🇷 | Lebte in Deutschland 🇩🇪"
+  },
+  "contact": {
+    "title": "Lass uns verbinden",
+    "subtitle": "Ich bin immer offen für neue Möglichkeiten und Zusammenarbeit",
+    "whatsapp": "Nachricht auf WhatsApp",
+    "email": "E-Mail senden",
+    "github": "GitHub ansehen",
+    "linkedin": "Auf LinkedIn verbinden",
+    "languages": "Ich kann auf Portugiesisch, Englisch und Deutsch kommunizieren"
+  }
+}

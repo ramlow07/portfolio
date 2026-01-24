@@ -1,0 +1,49 @@
+{
+  "hero": {
+    "greeting": "Oi! Eu sou Luam Ramlow.",
+    "title": "Engenheiro Fullstack. Solucionador de Problemas. Poliglota.",
+    "subtitle": "Construindo soluções inovadoras para fintech na DDC Company."
+  },
+  "nav": {
+    "work": "Trabalho",
+    "skills": "Habilidades",
+    "about": "Sobre",
+    "contact": "Contato"
+  },
+  "work": {
+    "title": "Minha Jornada",
+    "subtitle": "Do código ao impacto",
+    "current": "Atualmente",
+    "currentRole": "Engenheiro de Software Fullstack na DDC Company",
+    "journey": "A Jornada",
+    "currentDescription": "Desenvolvendo soluções de ponta para corretores e investidores em uma startup baseada em São Paulo. Construindo soluções que impactam vidas através da tecnologia.",
+    "journeyDescription": "Minha jornada na engenharia de software começou em 2021, enquanto vivia na Alemanha. O que começou como curiosidade se transformou em paixão, levando-me a fazer a transição de carreira para o desenvolvimento de software. Hoje, na DDC Company, combino minhas habilidades técnicas com minha experiência multicultural para criar soluções que conectam mercados. Já contribuí para projetos de clientes no Brasil, Alemanha e Reino Unido.",
+    "experience": "3+ anos na Alemanha",
+    "languages": "Fluente em 3 idiomas",
+    "programming": "Desde 2021"
+  },
+  "skills": {
+    "title": "Habilidades & Tecnologias",
+    "subtitle": "Ferramentas que uso para construir coisas incríveis",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Ferramentas & Outros"
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "subtitle": "Além do código",
+    "intro": "Sou um engenheiro de software fullstack que acredita que um ótimo código começa com um ótimo raciocínio. Foco em entender as necessidades do negócio, tomar decisões arquiteturais estratégicas e construir soluções que entregam valor real. Para mim, engenharia é sobre resolver problemas—não apenas escrever código.",
+    "polyglot": "Como poliglota falando português, inglês e alemão, trago uma perspectiva multicultural única para cada projeto. Meus 3 anos morando na Alemanha me ensinaram mais do que apenas outro idioma—me ensinaram a me adaptar, colaborar entre culturas e pensar globalmente.",
+    "passion": "Fora do trabalho, sou pai e praticante dedicado de Jiu-Jitsu Brasileiro. O treino mantém minha mente afiada e meus instintos de resolução de problemas refinados. A disciplina dos tatames se transfere diretamente para o meu código. Melhoria contínua é um estilo de vida, não apenas uma meta profissional.",
+    "location": "Baseado no Brasil 🇧🇷 | Morei na Alemanha 🇩🇪"
+  },
+  "contact": {
+    "title": "Vamos Conectar",
+    "subtitle": "Estou sempre aberto a novas oportunidades e colaborações",
+    "whatsapp": "Mensagem no WhatsApp",
+    "email": "Enviar Email",
+    "github": "Ver GitHub",
+    "linkedin": "Conectar no LinkedIn",
+    "languages": "Posso me comunicar em português, inglês e alemão"
+  }
+}

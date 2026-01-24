@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <p className="footer-text">
-            © {currentYear} Luan Ramlow. Built with React, TypeScript & ❤️
+            © {currentYear} Luam Ramlow. Built with React, TypeScript & ❤️
           </p>
           <p className="footer-subtext">
             Fullstack Engineer • Brazil 🇧🇷 • Germany 🇩🇪

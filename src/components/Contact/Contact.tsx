@@ -12,10 +12,10 @@ const Contact = () => {
 
   // Replace with your actual contact information
   const contactInfo = {
-    whatsapp: '+5511999999999', // Replace with your WhatsApp number
-    email: 'luan@example.com', // Replace with your email
-    github: 'https://github.com/yourusername', // Replace with your GitHub
-    linkedin: 'https://linkedin.com/in/yourusername', // Replace with your LinkedIn
+    whatsapp: '+5548999430682', // Replace with your WhatsApp number
+    email: 'ramlowdev@proton.me', // Replace with your email
+    github: 'https://github.com/ramlow07', // Replace with your GitHub
+    linkedin: 'https://www.linkedin.com/in/luam-ramlow-20b72723b', // Replace with your LinkedIn
   };
 
   const handleWhatsAppClick = () => {

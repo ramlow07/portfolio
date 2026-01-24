@@ -82,6 +82,13 @@ const Work = () => {
                     <p>PT • EN • DE</p>
                   </div>
                 </div>
+                <div className="highlight-item">
+                  <div className="highlight-icon">💻</div>
+                  <div className="highlight-content">
+                    <h4>{t('work.programming')}</h4>
+                    <p>Coding journey</p>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>

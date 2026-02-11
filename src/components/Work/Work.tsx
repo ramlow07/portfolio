@@ -15,13 +15,13 @@ const Work = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.1,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
@@ -30,7 +30,7 @@ const Work = () => {
   };
 
   return (
-    <section id="work" className="work section">
+    <section id="work" className="work">
       <div className="container">
         <motion.div
           ref={ref}
@@ -38,45 +38,52 @@ const Work = () => {
           animate={inView ? 'visible' : 'hidden'}
           variants={containerVariants}
         >
-          <motion.div variants={itemVariants} className="section-title">
-            <h2>{t('work.title')}</h2>
-            <p className="section-subtitle">{t('work.subtitle')}</p>
-          </motion.div>
+          <div className="section-header">
+            <motion.div variants={itemVariants} className="section-title">
+              <h2><span className="index">01.</span>{t('work.title')}</h2>
+            </motion.div>
+            <motion.p variants={itemVariants} className="section-subtitle">
+              {t('work.subtitle')}
+            </motion.p>
+          </div>
 
-          <div className="work-content">
-            <motion.div variants={itemVariants} className="work-card glass current-work">
+          <div className="work-grid">
+            <motion.div variants={itemVariants} className="work-card current-work">
               <div className="card-header">
                 <span className="badge">{t('work.current')}</span>
-                <div className="company-logo">
-                  <span className="logo-icon">🚀</span>
-                </div>
+                <span className="card-year">2024 - PRESENT</span>
               </div>
+              
               <h3 className="work-role">{t('work.currentRole')}</h3>
-              <p className="work-description">{t('work.currentDescription')}</p>
+              
+              <p className="work-description">
+                {t('work.currentDescription')}
+              </p>
+              
               <div className="work-tags">
-                <span className="tag">React</span>
-                <span className="tag">TypeScript</span>
-                <span className="tag">Node.js</span>
-                <span className="tag">Fintech</span>
+                <span className="tag">REACT</span>
+                <span className="tag">TYPESCRIPT</span>
+                <span className="tag">NODE.JS</span>
+                <span className="tag">FINTECH</span>
               </div>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="work-card glass journey-card">
-              <div className="journey-header">
-                <h3>{t('work.journey')}</h3>
+            <motion.div variants={itemVariants} className="work-card journey-card">
+              <div className="card-header">
+                <span className="badge" style={{ background: 'var(--color-electric)' }}>{t('work.journey')}</span>
+                <span className="card-year">EXPERIENCE</span>
               </div>
-              <p className="work-description">{t('work.journeyDescription')}</p>
-              
+
               <div className="journey-highlights">
                 <div className="highlight-item">
-                  <div className="highlight-icon">🇩🇪</div>
+                  <div className="highlight-icon">⚡</div>
                   <div className="highlight-content">
                     <h4>{t('work.experience')}</h4>
                     <p>International experience</p>
                   </div>
                 </div>
                 <div className="highlight-item">
-                  <div className="highlight-icon">🌍</div>
+                  <div className="highlight-icon">🌐</div>
                   <div className="highlight-content">
                     <h4>{t('work.languages')}</h4>
                     <p>PT • EN • DE</p>
@@ -86,7 +93,7 @@ const Work = () => {
                   <div className="highlight-icon">💻</div>
                   <div className="highlight-content">
                     <h4>{t('work.programming')}</h4>
-                    <p>Coding journey</p>
+                    <p>Fullstack Development</p>
                   </div>
                 </div>
               </div>

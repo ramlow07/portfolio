@@ -10,12 +10,11 @@ const Contact = () => {
     threshold: 0.1,
   });
 
-  // Replace with your actual contact information
   const contactInfo = {
-    whatsapp: '+5548999430682', // Replace with your WhatsApp number
-    email: 'ramlowdev@proton.me', // Replace with your email
-    github: 'https://github.com/ramlow07', // Replace with your GitHub
-    linkedin: 'https://www.linkedin.com/in/luam-ramlow-20b72723b', // Replace with your LinkedIn
+    whatsapp: '+5548999430682',
+    email: 'ramlowdev@proton.me',
+    github: 'https://github.com/ramlow07',
+    linkedin: 'https://www.linkedin.com/in/luam-ramlow-20b72723b',
   };
 
   const handleWhatsAppClick = () => {
@@ -34,7 +33,7 @@ const Contact = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
@@ -43,10 +42,10 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="contact section">
+    <section id="contact" className="contact">
       <div className="contact-background">
-        <div className="gradient-orb contact-orb-1"></div>
-        <div className="gradient-orb contact-orb-2"></div>
+        <div className="contact-orb-1"></div>
+        <div className="contact-orb-2"></div>
       </div>
 
       <div className="container">
@@ -56,40 +55,46 @@ const Contact = () => {
           animate={inView ? 'visible' : 'hidden'}
           variants={containerVariants}
         >
-          <motion.div variants={itemVariants} className="section-title">
-            <h2>{t('contact.title')}</h2>
-            <p className="section-subtitle">{t('contact.subtitle')}</p>
-          </motion.div>
+          <div className="section-header">
+            <motion.div variants={itemVariants} className="section-title">
+              <h2><span className="index">03.</span>{t('contact.title')}</h2>
+            </motion.div>
+            <motion.p variants={itemVariants} className="section-subtitle">
+              {t('contact.subtitle')}
+            </motion.p>
+          </div>
 
           <div className="contact-content">
             <motion.div variants={itemVariants} className="contact-grid">
-              <button onClick={handleWhatsAppClick} className="contact-card glass">
-                <div className="contact-icon whatsapp-icon">💬</div>
+              <button onClick={handleWhatsAppClick} className="contact-card">
+                <div className="contact-icon">💬</div>
                 <h3>{t('contact.whatsapp')}</h3>
                 <p>Quick response guaranteed</p>
               </button>
 
-              <a href={`mailto:${contactInfo.email}`} className="contact-card glass">
-                <div className="contact-icon email-icon">📧</div>
+              <a href={`mailto:${contactInfo.email}`} className="contact-card">
+                <div className="contact-icon">📧</div>
                 <h3>{t('contact.email')}</h3>
                 <p>Professional inquiries</p>
               </a>
 
-              <a href={contactInfo.github} target="_blank" rel="noopener noreferrer" className="contact-card glass">
-                <div className="contact-icon github-icon">💻</div>
+              <a href={contactInfo.github} target="_blank" rel="noopener noreferrer" className="contact-card">
+                <div className="contact-icon">💻</div>
                 <h3>{t('contact.github')}</h3>
                 <p>Check out my code</p>
               </a>
 
-              <a href={contactInfo.linkedin} target="_blank" rel="noopener noreferrer" className="contact-card glass">
-                <div className="contact-icon linkedin-icon">🔗</div>
+              <a href={contactInfo.linkedin} target="_blank" rel="noopener noreferrer" className="contact-card">
+                <div className="contact-icon">🔗</div>
                 <h3>{t('contact.linkedin')}</h3>
                 <p>Let's network</p>
               </a>
             </motion.div>
 
             <motion.div variants={itemVariants} className="contact-note">
-              <p className="language-note">{t('contact.languages')}</p>
+              <p className="language-note">
+                <span>{t('contact.languages')}</span>
+              </p>
             </motion.div>
           </div>
         </motion.div>

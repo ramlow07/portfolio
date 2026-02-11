@@ -1,5 +1,7 @@
 .contact {
+  background: var(--color-void);
   position: relative;
+  padding: var(--spacing-xl) 0;
   overflow: hidden;
 }
 
@@ -10,125 +12,120 @@
   width: 100%;
   height: 100%;
   z-index: 0;
-  overflow: hidden;
   pointer-events: none;
 }
 
+/* Specific orb positioning for contact */
 .contact-orb-1 {
-  width: 400px;
-  height: 400px;
-  background: var(--gradient-primary);
-  top: -200px;
-  right: -100px;
-  animation-delay: 0s;
+  top: -10%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(176, 38, 255, 0.15) 0%, transparent 70%);
+  filter: blur(60px);
+  position: absolute;
+  border-radius: 50%;
 }
 
 .contact-orb-2 {
-  width: 350px;
-  height: 350px;
-  background: var(--gradient-secondary);
-  bottom: -150px;
-  left: -100px;
-  animation-delay: 2s;
+  bottom: -10%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(204, 255, 0, 0.1) 0%, transparent 70%);
+  filter: blur(60px);
+  position: absolute;
+  border-radius: 50%;
 }
 
 .contact-content {
   position: relative;
   z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-header {
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
 }
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--spacing-lg);
-  margin-top: var(--spacing-2xl);
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .contact-card {
-  padding: var(--spacing-xl);
-  border-radius: var(--radius-lg);
-  text-align: center;
-  transition: all var(--transition-base);
-  cursor: pointer;
-  text-decoration: none;
+  background: rgba(10, 10, 12, 0.6);
+  border: 1px solid var(--border-subtle);
+  padding: var(--spacing-lg);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* Centered for bold look */
+  text-align: center;
+  transition: all var(--transition-base);
+  text-decoration: none;
   position: relative;
   overflow: hidden;
-  background: var(--color-bg-glass);
-  border: 1px solid var(--color-border);
+  backdrop-filter: blur(5px);
 }
 
+.contact-card:hover {
+  border-color: var(--color-acid);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+}
+
+/* Hover reveal effect */
 .contact-card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--gradient-primary);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--transition-slow);
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
 }
 
 .contact-card:hover::before {
-  transform: scaleX(1);
-}
-
-.contact-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg), var(--shadow-glow);
-  border-color: var(--color-accent-primary);
+  transform: translateX(100%);
 }
 
 .contact-icon {
-  font-size: 3.5rem;
-  width: 80px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--radius-md);
+  font-size: 2.5rem;
   margin-bottom: var(--spacing-md);
-  transition: all var(--transition-base);
-}
-
-.whatsapp-icon {
-  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
-}
-
-.email-icon {
-  background: linear-gradient(135deg, #EA4335 0%, #C5221F 100%);
-  box-shadow: 0 4px 20px rgba(234, 67, 53, 0.3);
-}
-
-.github-icon {
-  background: linear-gradient(135deg, #6e5494 0%, #4a3a6a 100%);
-  box-shadow: 0 4px 20px rgba(110, 84, 148, 0.3);
-}
-
-.linkedin-icon {
-  background: linear-gradient(135deg, #0077B5 0%, #005582 100%);
-  box-shadow: 0 4px 20px rgba(0, 119, 181, 0.3);
+  color: var(--color-text-secondary);
+  transition: all var(--transition-fast);
 }
 
 .contact-card:hover .contact-icon {
-  transform: scale(1.1) rotate(5deg);
+  color: var(--color-acid);
+  transform: scale(1.1);
+  text-shadow: 0 0 15px var(--color-acid-glow);
 }
 
 .contact-card h3 {
-  font-size: var(--font-size-xl);
-  margin-bottom: var(--spacing-xs);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
   color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .contact-card p {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-tertiary);
-  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
 }
 
 .contact-note {
@@ -137,40 +134,20 @@
 }
 
 .language-note {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--border-subtle);
+  padding: var(--spacing-sm) var(--spacing-lg);
   display: inline-block;
-  padding: var(--spacing-md) var(--spacing-xl);
-  background: var(--color-bg-glass);
-  backdrop-filter: blur(20px);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  font-size: var(--font-size-lg);
-  font-weight: 600;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  box-shadow: var(--shadow-md);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: rgba(0, 0, 0, 0.3);
 }
 
-@media (max-width: 768px) {
-  .contact-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--spacing-md);
-  }
-  
-  .contact-icon {
-    font-size: 3rem;
-    width: 70px;
-    height: 70px;
-  }
-  
-  .contact-card h3 {
-    font-size: var(--font-size-lg);
-  }
+.language-note span {
+  color: var(--color-electric);
 }
 
-@media (max-width: 480px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-}
+/* Specific Icon Colors on Hover can be added if desired, 
+   but unified acid green fits the theme well. */

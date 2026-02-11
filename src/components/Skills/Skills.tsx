@@ -12,25 +12,25 @@ const Skills = () => {
 
   const skills = {
     frontend: [
-      { name: 'React', icon: '⚛️', level: 100 },
-      { name: 'TypeScript', icon: '📘', level: 100 },
-      { name: 'JavaScript', icon: '💛', level: 100 },
-      { name: 'HTML/CSS', icon: '🎨', level: 100 },
-      { name: 'Next.js', icon: '▲', level: 100 },
+      { name: 'React', icon: '⚛️', level: 5, color: '#61DAFB' },
+      { name: 'TypeScript', icon: '📘', level: 5, color: '#3178C6' },
+      { name: 'JavaScript', icon: '💛', level: 5, color: '#F7DF1E' },
+      { name: 'HTML/CSS', icon: '🎨', level: 5, color: '#E34F26' },
+      { name: 'Next.js', icon: '▲', level: 4, color: '#ffffff' },
     ],
     backend: [
-      { name: 'Node.js', icon: '🟢', level: 100 },
-      { name: 'Express', icon: '🚂', level: 100 },
-      { name: 'PostgreSQL', icon: '🐘', level: 100 },
-      { name: 'MongoDB', icon: '🍃', level: 100 },
-      { name: 'NestJS', icon: '🦅', level: 100 },
+      { name: 'Node.js', icon: '🟢', level: 4, color: '#339933' },
+      { name: 'Express', icon: '🚂', level: 4, color: '#ffffff' },
+      { name: 'PostgreSQL', icon: '🐘', level: 4, color: '#336791' },
+      { name: 'MongoDB', icon: '🍃', level: 3, color: '#47A248' },
+      { name: 'NestJS', icon: '🦅', level: 3, color: '#E0234E' },
     ],
     tools: [
-      { name: 'Git', icon: '📦', level: 100 },
-      { name: 'Docker', icon: '🐳', level: 100 },
-      { name: 'AWS', icon: '☁️', level: 100 },
-      { name: 'Google Cloud', icon: '☁️', level: 100 },
-      { name: 'Redis', icon: '📦', level: 100 },
+      { name: 'Git', icon: '📦', level: 5, color: '#F05032' },
+      { name: 'Docker', icon: '🐳', level: 4, color: '#2496ED' },
+      { name: 'AWS', icon: '☁️', level: 3, color: '#FF9900' },
+      { name: 'Google Cloud', icon: '☁️', level: 3, color: '#4285F4' },
+      { name: 'Figma', icon: '🎨', level: 4, color: '#F24E1E' },
     ],
   };
 
@@ -45,16 +45,33 @@ const Skills = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
-      scale: 1,
+      y: 0,
       transition: { duration: 0.5 },
     },
   };
 
+  const renderDots = (level: number, color: string) => {
+    return (
+      <div className="skill-level-dots">
+        {[...Array(5)].map((_, i) => (
+          <motion.div
+            key={i}
+            className={`dot ${i < level ? 'active' : ''}`}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+            transition={{ delay: i * 0.1 }}
+            style={i < level ? { backgroundColor: color, boxShadow: `0 0 5px ${color}` } : {}}
+          />
+        ))}
+      </div>
+    );
+  };
+
   return (
-    <section id="skills" className="skills section">
+    <section id="skills" className="skills">
       <div className="container">
         <motion.div
           ref={ref}
@@ -62,38 +79,32 @@ const Skills = () => {
           animate={inView ? 'visible' : 'hidden'}
           variants={containerVariants}
         >
-          <motion.div variants={itemVariants} className="section-title">
-            <h2>{t('skills.title')}</h2>
-            <p className="section-subtitle">{t('skills.subtitle')}</p>
-          </motion.div>
+          <div className="section-header">
+            <motion.div variants={itemVariants} className="section-title">
+              <h2><span className="index">02.</span>{t('skills.title')}</h2>
+            </motion.div>
+            <motion.p variants={itemVariants} className="section-subtitle">
+              {t('skills.subtitle')}
+            </motion.p>
+          </div>
 
           <div className="skills-grid">
             <motion.div variants={itemVariants} className="skill-category">
               <div className="category-header">
                 <h3>{t('skills.frontend')}</h3>
-                <span className="category-icon">🎨</span>
+                <span className="category-icon">⚡</span>
               </div>
               <div className="skill-list">
-                {skills.frontend.map((skill, index) => (
-                  <motion.div
-                    key={skill.name}
+                {skills.frontend.map((skill) => (
+                  <div 
+                    key={skill.name} 
                     className="skill-item"
-                    variants={itemVariants}
-                    whileHover={{ scale: 1.05 }}
+                    style={{ '--skill-color': skill.color } as React.CSSProperties}
                   >
-                    <div className="skill-info">
-                      <span className="skill-icon">{skill.icon}</span>
-                      <span className="skill-name">{skill.name}</span>
-                    </div>
-                    <div className="skill-bar">
-                      <motion.div
-                        className="skill-progress"
-                        initial={{ width: 0 }}
-                        animate={inView ? { width: `${skill.level}%` } : { width: 0 }}
-                        transition={{ duration: 1, delay: index * 0.1 }}
-                      />
-                    </div>
-                  </motion.div>
+                    <span className="skill-icon">{skill.icon}</span>
+                    <span className="skill-name">{skill.name}</span>
+                    {renderDots(skill.level, skill.color)}
+                  </div>
                 ))}
               </div>
             </motion.div>
@@ -101,29 +112,19 @@ const Skills = () => {
             <motion.div variants={itemVariants} className="skill-category">
               <div className="category-header">
                 <h3>{t('skills.backend')}</h3>
-                <span className="category-icon">⚙️</span>
+                <span className="category-icon">🔗</span>
               </div>
               <div className="skill-list">
-                {skills.backend.map((skill, index) => (
-                  <motion.div
-                    key={skill.name}
+                {skills.backend.map((skill) => (
+                  <div 
+                    key={skill.name} 
                     className="skill-item"
-                    variants={itemVariants}
-                    whileHover={{ scale: 1.05 }}
+                    style={{ '--skill-color': skill.color } as React.CSSProperties}
                   >
-                    <div className="skill-info">
-                      <span className="skill-icon">{skill.icon}</span>
-                      <span className="skill-name">{skill.name}</span>
-                    </div>
-                    <div className="skill-bar">
-                      <motion.div
-                        className="skill-progress"
-                        initial={{ width: 0 }}
-                        animate={inView ? { width: `${skill.level}%` } : { width: 0 }}
-                        transition={{ duration: 1, delay: index * 0.1 }}
-                      />
-                    </div>
-                  </motion.div>
+                    <span className="skill-icon">{skill.icon}</span>
+                    <span className="skill-name">{skill.name}</span>
+                    {renderDots(skill.level, skill.color)}
+                  </div>
                 ))}
               </div>
             </motion.div>
@@ -134,26 +135,16 @@ const Skills = () => {
                 <span className="category-icon">🛠️</span>
               </div>
               <div className="skill-list">
-                {skills.tools.map((skill, index) => (
-                  <motion.div
-                    key={skill.name}
+                {skills.tools.map((skill) => (
+                  <div 
+                    key={skill.name} 
                     className="skill-item"
-                    variants={itemVariants}
-                    whileHover={{ scale: 1.05 }}
+                    style={{ '--skill-color': skill.color } as React.CSSProperties}
                   >
-                    <div className="skill-info">
-                      <span className="skill-icon">{skill.icon}</span>
-                      <span className="skill-name">{skill.name}</span>
-                    </div>
-                    <div className="skill-bar">
-                      <motion.div
-                        className="skill-progress"
-                        initial={{ width: 0 }}
-                        animate={inView ? { width: `${skill.level}%` } : { width: 0 }}
-                        transition={{ duration: 1, delay: index * 0.1 }}
-                      />
-                    </div>
-                  </motion.div>
+                    <span className="skill-icon">{skill.icon}</span>
+                    <span className="skill-name">{skill.name}</span>
+                    {renderDots(skill.level, skill.color)}
+                  </div>
                 ))}
               </div>
             </motion.div>

@@ -38,30 +38,43 @@ const About = () => {
           animate={inView ? 'visible' : 'hidden'}
           variants={containerVariants}
         >
-          <motion.div variants={itemVariants} className="section-title">
-            <h2>{t('about.title')}</h2>
-            <p className="section-subtitle">{t('about.subtitle')}</p>
-          </motion.div>
+          <div className="section-header">
+            <motion.div variants={itemVariants} className="section-title">
+              <h2><span className="index">01.</span>{t('about.title')}</h2>
+            </motion.div>
+            <motion.p variants={itemVariants} className="section-subtitle">
+              {t('about.subtitle')}
+            </motion.p>
+          </div>
 
           <div className="about-content">
-            <motion.div variants={itemVariants} className="about-card glass">
-              <div className="card-icon">🚀</div>
+            <motion.div variants={itemVariants} className="about-card">
+              <div className="card-header">
+                <div className="card-icon">🚀</div>
+                <h3 className="card-title">Mission</h3>
+              </div>
               <p className="about-text">{t('about.intro')}</p>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="about-card glass">
-              <div className="card-icon">🌍</div>
+            <motion.div variants={itemVariants} className="about-card">
+              <div className="card-header">
+                <div className="card-icon">🌍</div>
+                <h3 className="card-title">Perspective</h3>
+              </div>
               <p className="about-text">{t('about.polyglot')}</p>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="about-card glass">
-              <div className="card-icon">💡</div>
+            <motion.div variants={itemVariants} className="about-card">
+              <div className="card-header">
+                <div className="card-icon">💡</div>
+                <h3 className="card-title">Passion</h3>
+              </div>
               <p className="about-text">{t('about.passion')}</p>
             </motion.div>
           </div>
 
           <motion.div variants={itemVariants} className="about-footer">
-            <div className="location-badge glass">
+            <div className="location-badge">
               <span className="location-text">{t('about.location')}</span>
             </div>
           </motion.div>

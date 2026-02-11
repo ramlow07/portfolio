@@ -1,8 +1,10 @@
 .app {
   min-height: 100vh;
   position: relative;
+  overflow: hidden;
 }
 
 main {
   position: relative;
+  z-index: var(--z-base);
 }

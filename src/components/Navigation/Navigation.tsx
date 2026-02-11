@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
+import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
 import './Navigation.css';
 
 const Navigation = () => {
@@ -13,7 +14,6 @@ const Navigation = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
 
-      // Detect active section
       const sections = ['work', 'skills', 'about', 'contact'];
       const current = sections.find((section) => {
         const element = document.getElementById(section);
@@ -44,41 +44,27 @@ const Navigation = () => {
       className={`navigation ${scrolled ? 'scrolled' : ''}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.5, ease: "circOut" }}
     >
       <div className="nav-container">
         <div className="nav-logo">
-          <span className="logo-text gradient-text">LR</span>
+          LUAM<span className="keyword">.DEV</span>
         </div>
 
         <div className="nav-links">
-          <button
-            onClick={() => scrollToSection('work')}
-            className={`nav-link ${activeSection === 'work' ? 'active' : ''}`}
-          >
-            {t('nav.work')}
-          </button>
-          <button
-            onClick={() => scrollToSection('skills')}
-            className={`nav-link ${activeSection === 'skills' ? 'active' : ''}`}
-          >
-            {t('nav.skills')}
-          </button>
-          <button
-            onClick={() => scrollToSection('about')}
-            className={`nav-link ${activeSection === 'about' ? 'active' : ''}`}
-          >
-            {t('nav.about')}
-          </button>
-          <button
-            onClick={() => scrollToSection('contact')}
-            className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`}
-          >
-            {t('nav.contact')}
-          </button>
+          {['work', 'skills', 'about', 'contact'].map((section) => (
+             <button
+              key={section}
+              onClick={() => scrollToSection(section)}
+              className={`nav-link ${activeSection === section ? 'active' : ''}`}
+            >
+              <span className="nav-index">0{['work', 'skills', 'about', 'contact'].indexOf(section) + 1}.</span> {t(`nav.${section}`)}
+            </button>
+          ))}
         </div>
 
         <div className="nav-actions">
+          <ThemeSwitcher />
           <LanguageSwitcher />
         </div>
       </div>

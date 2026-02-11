@@ -11,7 +11,7 @@ const Footer = () => {
             © {currentYear} Luam Ramlow. Built with React, TypeScript & ❤️
           </p>
           <p className="footer-subtext">
-            Fullstack Engineer • Brazil 🇧🇷 • Germany 🇩🇪
+            Fullstack Engineer • <span>Brazil 🇧🇷</span> • <span>Germany 🇩🇪</span>
           </p>
         </div>
       </div>

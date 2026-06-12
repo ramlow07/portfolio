@@ -23,7 +23,7 @@ function Monolith() {
 
     // scale-in intro
     intro.current = Math.min(1, intro.current + delta * 0.9);
-    const s = 1.15 * easeOutCubic(intro.current);
+    const s = 1.0 * easeOutCubic(intro.current);
     m.scale.set(s, s, s);
 
     // idle spin + pointer tilt
@@ -37,6 +37,17 @@ function Monolith() {
 
   return (
     <mesh ref={mesh} scale={0}>
+      {/* glowing flame core, hidden behind the glass so it only shows
+          through refraction — gives clear glass a warm, lit-from-within soul */}
+      <mesh position={[0, 0, -0.2]}>
+        <sphereGeometry args={[0.4, 32, 32]} />
+        <meshStandardMaterial
+          color="#ff5a2a"
+          emissive="#ff5a2a"
+          emissiveIntensity={1.4}
+          toneMapped={false}
+        />
+      </mesh>
       <icosahedronGeometry args={[1.25, 0]} />
       <MeshTransmissionMaterial
         samples={8}
@@ -48,9 +59,9 @@ function Monolith() {
         distortionScale={0.25}
         temporalDistortion={0.05}
         ior={1.46}
-        color="#ffe3d6"
-        attenuationColor="#ff4124"
-        attenuationDistance={1.6}
+        color="#fff0e8"
+        attenuationColor="#ff5a2a"
+        attenuationDistance={2.4}
       />
     </mesh>
   );
@@ -74,27 +85,35 @@ const GlassMonolith = () => {
 
       <Monolith />
 
-      {/* Self-contained studio environment: neutral key + fill, one warm edge */}
+      {/* Self-contained studio environment: bright key + rim for crisp glass
+          edges, plus one warm edge that matches the inner flame core */}
       <Environment resolution={256}>
         <Lightformer
           form="rect"
-          intensity={4}
-          position={[3, 4, 4]}
-          scale={[7, 7, 1]}
+          intensity={7}
+          position={[4, 5, 4]}
+          scale={[8, 8, 1]}
           color="#ffffff"
         />
         <Lightformer
           form="rect"
-          intensity={1.6}
-          position={[-5, 1, 2]}
-          scale={[4, 8, 1]}
-          color="#cfd2d6"
+          intensity={4}
+          position={[-6, 2, 1]}
+          scale={[3, 9, 1]}
+          color="#ffffff"
+        />
+        <Lightformer
+          form="rect"
+          intensity={3}
+          position={[5, -1, -3]}
+          scale={[3, 9, 1]}
+          color="#dfe3e8"
         />
         <Lightformer
           form="circle"
-          intensity={2.2}
-          position={[-3, -3, 1]}
-          scale={[2.5, 2.5, 1]}
+          intensity={1.6}
+          position={[-3, -3, 2]}
+          scale={[3, 3, 1]}
           color="#ff6a3d"
         />
       </Environment>

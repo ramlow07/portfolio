@@ -39,19 +39,18 @@ function Monolith() {
     <mesh ref={mesh} scale={0}>
       <icosahedronGeometry args={[1.25, 0]} />
       <MeshTransmissionMaterial
-        samples={6}
+        samples={8}
         resolution={512}
-        thickness={1.4}
-        roughness={0.06}
-        anisotropy={0.6}
-        chromaticAberration={0.5}
-        distortion={0.2}
-        distortionScale={0.4}
-        temporalDistortion={0.1}
-        ior={1.4}
-        color="#f2ede3"
-        attenuationColor="#ff7a45"
-        attenuationDistance={2.4}
+        thickness={1.1}
+        roughness={0.04}
+        chromaticAberration={0.18}
+        distortion={0.08}
+        distortionScale={0.25}
+        temporalDistortion={0.05}
+        ior={1.45}
+        color="#ffffff"
+        attenuationColor="#ff5a36"
+        attenuationDistance={3.2}
       />
     </mesh>
   );
@@ -68,35 +67,35 @@ const GlassMonolith = () => {
       dpr={[1, 1.75]}
       gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
     >
-      <ambientLight intensity={0.4} />
-      <directionalLight position={[5, 5, 5]} intensity={1.2} />
-      {/* flame rim light */}
-      <pointLight position={[-4, -2, -3]} intensity={30} color="#ff4a2b" distance={12} />
+      <ambientLight intensity={0.3} />
+      <directionalLight position={[4, 6, 5]} intensity={1} />
+      {/* single subtle flame accent from below-left */}
+      <pointLight position={[-4, -3, -2]} intensity={12} color="#ff5a36" distance={14} />
 
       <Monolith />
 
-      {/* Self-contained studio environment for crisp glass reflections */}
+      {/* Self-contained studio environment: neutral key + fill, one warm edge */}
       <Environment resolution={256}>
         <Lightformer
           form="rect"
-          intensity={3}
-          position={[3, 3, 4]}
-          scale={[6, 6, 1]}
+          intensity={4}
+          position={[3, 4, 4]}
+          scale={[7, 7, 1]}
           color="#ffffff"
         />
         <Lightformer
-          form="circle"
-          intensity={2}
-          position={[-4, -1, 2]}
-          scale={[3, 3, 1]}
-          color="#ff7a45"
+          form="rect"
+          intensity={1.6}
+          position={[-5, 1, 2]}
+          scale={[4, 8, 1]}
+          color="#cfd2d6"
         />
         <Lightformer
-          form="rect"
-          intensity={1.5}
-          position={[0, -4, 3]}
-          scale={[8, 2, 1]}
-          color="#aab0ff"
+          form="circle"
+          intensity={2.2}
+          position={[-3, -3, 1]}
+          scale={[2.5, 2.5, 1]}
+          color="#ff6a3d"
         />
       </Environment>
     </Canvas>

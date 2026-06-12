@@ -3,13 +3,24 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Edges, Environment, Lightformer, MeshTransmissionMaterial } from '@react-three/drei';
 import * as THREE from 'three';
 import Flame from './Flame';
+import type { Quality } from '../../hooks/useEnable3D';
+
+const PRESETS: Record<Quality, {
+  dpr: [number, number];
+  resolution: number;
+  samples: number;
+  envResolution: number;
+}> = {
+  high: { dpr: [1, 1.75], resolution: 512, samples: 10, envResolution: 256 },
+  low: { dpr: [1, 1.5], resolution: 256, samples: 4, envResolution: 128 },
+};
 
 /**
  * Faceted glass gem: slow idle rotation, eases toward the pointer, scales in
  * on mount. Neutral crystal — its warmth comes from a real animated flame
  * reflected in the highlights (rendered into the environment map), not a tint.
  */
-function Gem() {
+function Gem({ resolution, samples }: { resolution: number; samples: number }) {
   const mesh = useRef<THREE.Mesh>(null);
   const pointer = useRef({ x: 0, y: 0 });
   const intro = useRef(0);
@@ -38,8 +49,8 @@ function Gem() {
       <icosahedronGeometry args={[1.25, 1]} />
       <MeshTransmissionMaterial
         flatShading
-        samples={10}
-        resolution={512}
+        samples={samples}
+        resolution={resolution}
         thickness={0.5}
         roughness={0.02}
         chromaticAberration={0.16}
@@ -61,21 +72,22 @@ function easeOutCubic(t: number) {
   return 1 - Math.pow(1 - t, 3);
 }
 
-const GlassMonolith = () => {
+const GlassMonolith = ({ quality = 'high' }: { quality?: Quality }) => {
+  const preset = PRESETS[quality];
   return (
     <Canvas
       camera={{ position: [0, 0, 5], fov: 38 }}
-      dpr={[1, 1.75]}
+      dpr={preset.dpr}
       gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
     >
       <ambientLight intensity={0.5} />
       <directionalLight position={[4, 6, 5]} intensity={1.2} />
 
-      <Gem />
+      <Gem resolution={preset.resolution} samples={preset.samples} />
 
       {/* frames=Infinity re-renders the env each frame so the animated flame
           inside it shows up as a live, flickering reflection on the glass */}
-      <Environment resolution={256} frames={Infinity} environmentIntensity={1.3}>
+      <Environment resolution={preset.envResolution} frames={Infinity} environmentIntensity={1.3}>
         {/* neutral surround for crisp cut-glass facets (eased so flame reads) */}
         <Lightformer form="rect" intensity={6} position={[0, 6, 2]} scale={[10, 6, 1]} color="#ffffff" />
         <Lightformer form="rect" intensity={3} position={[0, -6, 2]} scale={[10, 5, 1]} color="#eef1f4" />

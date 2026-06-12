@@ -1,7 +1,7 @@
 import { Suspense, lazy, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { gsap, ScrollTrigger, SplitText } from '../../lib/gsap';
-import { useEnable3D } from '../../hooks/useEnable3D';
+import { useHero3D } from '../../hooks/useEnable3D';
 import './Hero.css';
 
 const GlassMonolith = lazy(() => import('../Hero3D/GlassMonolith'));
@@ -10,7 +10,7 @@ const Hero = () => {
   const { t } = useTranslation();
   const root = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
-  const enable3D = useEnable3D();
+  const { enabled: enable3D, quality } = useHero3D();
 
   useEffect(() => {
     const el = root.current;
@@ -78,7 +78,7 @@ const Hero = () => {
         <div className="hero-visual" aria-hidden>
           {enable3D ? (
             <Suspense fallback={<div className="hero-fallback" />}>
-              <GlassMonolith />
+              <GlassMonolith quality={quality} />
             </Suspense>
           ) : (
             <div className="hero-fallback" />

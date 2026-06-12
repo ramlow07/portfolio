@@ -1,153 +1,97 @@
 .contact {
-  background: var(--color-void);
   position: relative;
-  padding: var(--spacing-xl) 0;
+  background: var(--bg);
+  padding-block: clamp(6rem, 16vh, 14rem);
   overflow: hidden;
 }
 
-.contact-background {
+.contact-glow {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
+  bottom: -30%;
+  left: 50%;
+  translate: -50% 0;
+  width: 90vw;
+  height: 60vh;
+  background: radial-gradient(ellipse at center, var(--flame-soft) 0%, transparent 70%);
   pointer-events: none;
+  z-index: 0;
 }
 
-/* Specific orb positioning for contact */
-.contact-orb-1 {
-  top: -10%;
-  right: -10%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(176, 38, 255, 0.15) 0%, transparent 70%);
-  filter: blur(60px);
-  position: absolute;
-  border-radius: 50%;
+.contact-shell { position: relative; z-index: 1; }
+.contact .eyebrow { margin-bottom: clamp(1.5rem, 4vw, 3rem); }
+
+.contact-title {
+  font-size: clamp(2.6rem, 8vw, 7rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+.contact-title .contact-line { overflow: hidden; padding-bottom: 0.08em; }
+
+.contact-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: clamp(2rem, 5vw, 3rem) 0 clamp(3rem, 8vw, 6rem);
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--fg);
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+  font-size: 0.8rem;
+  transition: border-color 0.4s var(--ease-out), color 0.4s var(--ease-out);
+}
+.contact-cta:hover {
+  border-color: var(--flame);
+  color: var(--flame);
 }
 
-.contact-orb-2 {
-  bottom: -10%;
-  left: -10%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(204, 255, 0, 0.1) 0%, transparent 70%);
-  filter: blur(60px);
-  position: absolute;
-  border-radius: 50%;
+.contact-rows {
+  border-top: 1px solid var(--line);
 }
 
-.contact-content {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.section-header {
-  margin-bottom: var(--spacing-xl);
-  text-align: center;
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--spacing-md);
-}
-
-@media (min-width: 768px) {
-  .contact-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.contact-card {
-  background: rgba(10, 10, 12, 0.6);
-  border: 1px solid var(--border-subtle);
-  padding: var(--spacing-lg);
+.contact-row {
   display: flex;
-  flex-direction: column;
-  align-items: center; /* Centered for bold look */
-  text-align: center;
-  transition: all var(--transition-base);
-  text-decoration: none;
+  align-items: center;
+  gap: 1.5rem;
+  padding-block: clamp(1.1rem, 2.5vw, 1.8rem);
+  border-bottom: 1px solid var(--line);
   position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(5px);
 }
-
-.contact-card:hover {
-  border-color: var(--color-acid);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+.contact-row-label {
+  font-size: clamp(1.3rem, 2.8vw, 2.2rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  transition: color 0.35s var(--ease-out), transform 0.45s var(--ease-out);
 }
-
-/* Hover reveal effect */
-.contact-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.03), transparent);
-  transform: translateX(-100%);
-  transition: transform 0.6s ease;
+.contact-row:hover .contact-row-label {
+  color: var(--flame);
+  transform: translateX(0.6rem);
 }
-
-.contact-card:hover::before {
-  transform: translateX(100%);
+.contact-row-meta {
+  margin-left: auto;
+  color: var(--fg-faint);
+  text-transform: none;
+  letter-spacing: 0.08em;
 }
-
-.contact-icon {
-  font-size: 2.5rem;
-  margin-bottom: var(--spacing-md);
-  color: var(--color-text-secondary);
-  transition: all var(--transition-fast);
+.contact-row-arrow {
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  color: var(--fg-faint);
+  transition: color 0.35s var(--ease-out), transform 0.45s var(--ease-out);
 }
-
-.contact-card:hover .contact-icon {
-  color: var(--color-acid);
-  transform: scale(1.1);
-  text-shadow: 0 0 15px var(--color-acid-glow);
-}
-
-.contact-card h3 {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  color: var(--color-text-primary);
-  margin-bottom: var(--spacing-xs);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.contact-card p {
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  color: var(--color-text-secondary);
+.contact-row:hover .contact-row-arrow {
+  color: var(--flame);
+  transform: translate(0.3rem, -0.3rem);
 }
 
 .contact-note {
-  margin-top: var(--spacing-2xl);
-  text-align: center;
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  max-width: 50ch;
+  color: var(--fg-dim);
 }
 
-.language-note {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  color: var(--color-text-secondary);
-  border: 1px solid var(--border-subtle);
-  padding: var(--spacing-sm) var(--spacing-lg);
-  display: inline-block;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  background: rgba(0, 0, 0, 0.3);
+@media (max-width: 600px) {
+  .contact-row-meta { display: none; }
 }
-
-.language-note span {
-  color: var(--color-electric);
-}
-
-/* Specific Icon Colors on Hover can be added if desired, 
-   but unified acid green fits the theme well. */

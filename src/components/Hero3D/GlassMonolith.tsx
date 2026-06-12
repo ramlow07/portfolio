@@ -47,10 +47,10 @@ function Monolith() {
         distortion={0.08}
         distortionScale={0.25}
         temporalDistortion={0.05}
-        ior={1.45}
-        color="#ffffff"
-        attenuationColor="#ff5a36"
-        attenuationDistance={3.2}
+        ior={1.46}
+        color="#ffe3d6"
+        attenuationColor="#ff4124"
+        attenuationDistance={1.6}
       />
     </mesh>
   );
@@ -69,8 +69,8 @@ const GlassMonolith = () => {
     >
       <ambientLight intensity={0.3} />
       <directionalLight position={[4, 6, 5]} intensity={1} />
-      {/* single subtle flame accent from below-left */}
-      <pointLight position={[-4, -3, -2]} intensity={12} color="#ff5a36" distance={14} />
+      {/* warm flame accent from below-left */}
+      <pointLight position={[-4, -3, -2]} intensity={20} color="#ff4124" distance={14} />
 
       <Monolith />
 

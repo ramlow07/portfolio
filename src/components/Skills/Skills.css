@@ -46,8 +46,7 @@
 
 .skill-row {
   display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
+  align-items: center;
   padding-block: 0.95rem;
   border-bottom: 1px solid var(--line-soft);
   transition: padding-left 0.4s var(--ease-out);
@@ -61,22 +60,6 @@
   transition: color 0.35s var(--ease-out);
 }
 .skill-row:hover .skill-name { color: var(--flame); }
-
-.skill-bar {
-  position: relative;
-  height: 1px;
-  width: 100%;
-  background: var(--line);
-  overflow: hidden;
-}
-.skill-bar-fill {
-  position: absolute;
-  inset: 0 auto 0 0;
-  height: 100%;
-  background: var(--flame);
-  opacity: 0.7;
-  transform-origin: left;
-}
 
 @media (max-width: 900px) {
   .skills-grid { grid-template-columns: 1fr; gap: 2.5rem; }

@@ -55,18 +55,18 @@ const About = () => {
 
         <div className="about-support">
           <div className="about-col" data-reveal>
-            <span className="about-col-tag mono">Perspective</span>
+            <span className="about-col-tag mono">{t('about.workTag')}</span>
             <p>{t('about.polyglot')}</p>
           </div>
           <div className="about-col" data-reveal>
-            <span className="about-col-tag mono">Off the clock</span>
+            <span className="about-col-tag mono">{t('about.offClockTag')}</span>
             <p>{t('about.passion')}</p>
           </div>
         </div>
 
         <div className="about-foot" data-reveal>
           <span className="about-location">{t('about.location')}</span>
-          <span className="about-langs mono">PT · EN · DE</span>
+          <span className="about-langs mono">EN · PT · DE</span>
         </div>
       </div>
     </section>

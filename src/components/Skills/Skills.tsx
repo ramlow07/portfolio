@@ -1,155 +1,130 @@
+import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { gsap, ScrollTrigger } from '../../lib/gsap';
 import './Skills.css';
+
+type Skill = { name: string; level: number };
+
+const GROUPS: { key: string; index: string; items: Skill[] }[] = [
+  {
+    key: 'frontend',
+    index: '/01',
+    items: [
+      { name: 'React', level: 95 },
+      { name: 'TypeScript', level: 95 },
+      { name: 'JavaScript', level: 95 },
+      { name: 'Next.js', level: 80 },
+      { name: 'HTML / CSS', level: 90 },
+    ],
+  },
+  {
+    key: 'backend',
+    index: '/02',
+    items: [
+      { name: 'Node.js', level: 85 },
+      { name: 'Express', level: 85 },
+      { name: 'PostgreSQL', level: 80 },
+      { name: 'NestJS', level: 70 },
+      { name: 'MongoDB', level: 65 },
+    ],
+  },
+  {
+    key: 'tools',
+    index: '/03',
+    items: [
+      { name: 'Git', level: 95 },
+      { name: 'Docker', level: 80 },
+      { name: 'AWS', level: 65 },
+      { name: 'Google Cloud', level: 65 },
+      { name: 'Figma', level: 75 },
+    ],
+  },
+];
 
 const Skills = () => {
   const { t } = useTranslation();
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const root = useRef<HTMLElement>(null);
 
-  const skills = {
-    frontend: [
-      { name: 'React', icon: '⚛️', level: 5, color: '#61DAFB' },
-      { name: 'TypeScript', icon: '📘', level: 5, color: '#3178C6' },
-      { name: 'JavaScript', icon: '💛', level: 5, color: '#F7DF1E' },
-      { name: 'HTML/CSS', icon: '🎨', level: 5, color: '#E34F26' },
-      { name: 'Next.js', icon: '▲', level: 4, color: '#ffffff' },
-    ],
-    backend: [
-      { name: 'Node.js', icon: '🟢', level: 4, color: '#339933' },
-      { name: 'Express', icon: '🚂', level: 4, color: '#ffffff' },
-      { name: 'PostgreSQL', icon: '🐘', level: 4, color: '#336791' },
-      { name: 'MongoDB', icon: '🍃', level: 3, color: '#47A248' },
-      { name: 'NestJS', icon: '🦅', level: 3, color: '#E0234E' },
-    ],
-    tools: [
-      { name: 'Git', icon: '📦', level: 5, color: '#F05032' },
-      { name: 'Docker', icon: '🐳', level: 4, color: '#2496ED' },
-      { name: 'AWS', icon: '☁️', level: 3, color: '#FF9900' },
-      { name: 'Google Cloud', icon: '☁️', level: 3, color: '#4285F4' },
-      { name: 'Figma', icon: '🎨', level: 4, color: '#F24E1E' },
-    ],
-  };
+  useEffect(() => {
+    const el = root.current;
+    if (!el) return;
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
+    const ctx = gsap.context(() => {
+      // Heading rises
+      gsap.from('.skills-heading [data-reveal]', {
+        yPercent: 110,
+        duration: 1,
+        ease: 'power4.out',
+        stagger: 0.1,
+        scrollTrigger: { trigger: '.skills-heading', start: 'top 80%' },
+      });
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
-  };
+      // Each column reveals + bars grow
+      gsap.utils.toArray<HTMLElement>('.skill-col').forEach((col) => {
+        const rows = col.querySelectorAll('.skill-row');
+        gsap.from(rows, {
+          opacity: 0,
+          y: 26,
+          duration: 0.7,
+          ease: 'power3.out',
+          stagger: 0.07,
+          scrollTrigger: { trigger: col, start: 'top 82%' },
+        });
+        col.querySelectorAll<HTMLElement>('.skill-bar-fill').forEach((bar) => {
+          gsap.fromTo(
+            bar,
+            { scaleX: 0 },
+            {
+              scaleX: 1,
+              duration: 1.1,
+              ease: 'power3.out',
+              scrollTrigger: { trigger: bar, start: 'top 90%' },
+            }
+          );
+        });
+      });
 
-  const renderDots = (level: number, color: string) => {
-    return (
-      <div className="skill-level-dots">
-        {[...Array(5)].map((_, i) => (
-          <motion.div
-            key={i}
-            className={`dot ${i < level ? 'active' : ''}`}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
-            transition={{ delay: i * 0.1 }}
-            style={i < level ? { backgroundColor: color, boxShadow: `0 0 5px ${color}` } : {}}
-          />
-        ))}
-      </div>
-    );
-  };
+      document.fonts?.ready.then(() => ScrollTrigger.refresh());
+    }, el);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <section id="skills" className="skills">
-      <div className="container">
-        <motion.div
-          ref={ref}
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-          variants={containerVariants}
-        >
-          <div className="section-header">
-            <motion.div variants={itemVariants} className="section-title">
-              <h2><span className="index">02.</span>{t('skills.title')}</h2>
-            </motion.div>
-            <motion.p variants={itemVariants} className="section-subtitle">
-              {t('skills.subtitle')}
-            </motion.p>
-          </div>
+    <section ref={root} id="skills" className="skills">
+      <div className="shell">
+        <div className="skills-head">
+          <span className="eyebrow">02 — {t('skills.title')}</span>
+          <h2 className="skills-heading">
+            <span className="reveal-line"><span data-reveal>Tools of</span></span>
+            <span className="reveal-line"><span data-reveal>the <span className="accent">trade</span></span></span>
+          </h2>
+          <p className="skills-sub">{t('skills.subtitle')}</p>
+        </div>
 
-          <div className="skills-grid">
-            <motion.div variants={itemVariants} className="skill-category">
-              <div className="category-header">
-                <h3>{t('skills.frontend')}</h3>
-                <span className="category-icon">⚡</span>
+        <div className="skills-grid">
+          {GROUPS.map((group) => (
+            <div className="skill-col" key={group.key}>
+              <div className="skill-col-head">
+                <h3>{t(`skills.${group.key}`)}</h3>
+                <span className="skill-col-index mono">{group.index}</span>
               </div>
-              <div className="skill-list">
-                {skills.frontend.map((skill) => (
-                  <div 
-                    key={skill.name} 
-                    className="skill-item"
-                    style={{ '--skill-color': skill.color } as React.CSSProperties}
-                  >
-                    <span className="skill-icon">{skill.icon}</span>
-                    <span className="skill-name">{skill.name}</span>
-                    {renderDots(skill.level, skill.color)}
-                  </div>
+              <ul className="skill-list">
+                {group.items.map((s) => (
+                  <li className="skill-row" key={s.name} data-cursor="">
+                    <span className="skill-name">{s.name}</span>
+                    <span className="skill-bar">
+                      <span
+                        className="skill-bar-fill"
+                        style={{ width: `${s.level}%` }}
+                      />
+                    </span>
+                  </li>
                 ))}
-              </div>
-            </motion.div>
-
-            <motion.div variants={itemVariants} className="skill-category">
-              <div className="category-header">
-                <h3>{t('skills.backend')}</h3>
-                <span className="category-icon">🔗</span>
-              </div>
-              <div className="skill-list">
-                {skills.backend.map((skill) => (
-                  <div 
-                    key={skill.name} 
-                    className="skill-item"
-                    style={{ '--skill-color': skill.color } as React.CSSProperties}
-                  >
-                    <span className="skill-icon">{skill.icon}</span>
-                    <span className="skill-name">{skill.name}</span>
-                    {renderDots(skill.level, skill.color)}
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div variants={itemVariants} className="skill-category">
-              <div className="category-header">
-                <h3>{t('skills.tools')}</h3>
-                <span className="category-icon">🛠️</span>
-              </div>
-              <div className="skill-list">
-                {skills.tools.map((skill) => (
-                  <div 
-                    key={skill.name} 
-                    className="skill-item"
-                    style={{ '--skill-color': skill.color } as React.CSSProperties}
-                  >
-                    <span className="skill-icon">{skill.icon}</span>
-                    <span className="skill-name">{skill.name}</span>
-                    {renderDots(skill.level, skill.color)}
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </motion.div>
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

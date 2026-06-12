@@ -1,105 +1,99 @@
+import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { gsap, ScrollTrigger } from '../../lib/gsap';
 import './Work.css';
 
 const Work = () => {
   const { t } = useTranslation();
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const root = useRef<HTMLElement>(null);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
+  useEffect(() => {
+    const el = root.current;
+    if (!el) return;
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 },
-    },
-  };
+    const ctx = gsap.context(() => {
+      // Gentle reveal of each timeline entry.
+      gsap.utils.toArray<HTMLElement>('[data-reveal]').forEach((node) => {
+        gsap.from(node, {
+          opacity: 0,
+          y: 28,
+          duration: 0.9,
+          ease: 'power3.out',
+          scrollTrigger: { trigger: node, start: 'top 85%' },
+        });
+      });
+
+      // Draw the timeline line as you scroll through the section.
+      gsap.fromTo(
+        '.timeline-line',
+        { scaleY: 0 },
+        {
+          scaleY: 1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.timeline',
+            start: 'top 70%',
+            end: 'bottom 70%',
+            scrub: true,
+          },
+        }
+      );
+
+      document.fonts?.ready.then(() => ScrollTrigger.refresh());
+    }, el);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <section id="work" className="work">
-      <div className="container">
-        <motion.div
-          ref={ref}
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-          variants={containerVariants}
-        >
-          <div className="section-header">
-            <motion.div variants={itemVariants} className="section-title">
-              <h2><span className="index">01.</span>{t('work.title')}</h2>
-            </motion.div>
-            <motion.p variants={itemVariants} className="section-subtitle">
-              {t('work.subtitle')}
-            </motion.p>
+    <section ref={root} id="work" className="work">
+      <div className="shell">
+        <div className="work-head" data-reveal>
+          <span className="eyebrow">01 — {t('work.title')}</span>
+          <h2 className="work-heading">{t('work.subtitle')}</h2>
+        </div>
+
+        <div className="timeline">
+          <span className="timeline-line" aria-hidden />
+
+          <article className="entry" data-reveal>
+            <span className="entry-year mono">2024 — Present</span>
+            <div className="entry-body">
+              <span className="entry-tag mono accent">{t('work.current')}</span>
+              <h3 className="entry-title">{t('work.currentRole')}</h3>
+              <p className="entry-text">{t('work.currentDescription')}</p>
+              <div className="entry-chips">
+                {['React', 'TypeScript', 'Node.js', 'Fintech'].map((c) => (
+                  <span className="entry-chip" key={c}>{c}</span>
+                ))}
+              </div>
+            </div>
+          </article>
+
+          <article className="entry" data-reveal>
+            <span className="entry-year mono">2021 — 2024</span>
+            <div className="entry-body">
+              <span className="entry-tag mono">{t('work.journey')}</span>
+              <h3 className="entry-title">{t('work.experience')}</h3>
+              <p className="entry-text">{t('work.journeyDescription')}</p>
+            </div>
+          </article>
+        </div>
+
+        <div className="work-stats" data-reveal>
+          <div className="stat">
+            <span className="stat-num">3+</span>
+            <span className="stat-label">{t('work.experience')}</span>
           </div>
-
-          <div className="work-grid">
-            <motion.div variants={itemVariants} className="work-card current-work">
-              <div className="card-header">
-                <span className="badge">{t('work.current')}</span>
-                <span className="card-year">2024 - PRESENT</span>
-              </div>
-              
-              <h3 className="work-role">{t('work.currentRole')}</h3>
-              
-              <p className="work-description">
-                {t('work.currentDescription')}
-              </p>
-              
-              <div className="work-tags">
-                <span className="tag">REACT</span>
-                <span className="tag">TYPESCRIPT</span>
-                <span className="tag">NODE.JS</span>
-                <span className="tag">FINTECH</span>
-              </div>
-            </motion.div>
-
-            <motion.div variants={itemVariants} className="work-card journey-card">
-              <div className="card-header">
-                <span className="badge" style={{ background: 'var(--color-electric)' }}>{t('work.journey')}</span>
-                <span className="card-year">EXPERIENCE</span>
-              </div>
-
-              <div className="journey-highlights">
-                <div className="highlight-item">
-                  <div className="highlight-icon">⚡</div>
-                  <div className="highlight-content">
-                    <h4>{t('work.experience')}</h4>
-                    <p>International experience</p>
-                  </div>
-                </div>
-                <div className="highlight-item">
-                  <div className="highlight-icon">🌐</div>
-                  <div className="highlight-content">
-                    <h4>{t('work.languages')}</h4>
-                    <p>PT • EN • DE</p>
-                  </div>
-                </div>
-                <div className="highlight-item">
-                  <div className="highlight-icon">💻</div>
-                  <div className="highlight-content">
-                    <h4>{t('work.programming')}</h4>
-                    <p>Fullstack Development</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+          <div className="stat">
+            <span className="stat-num">3</span>
+            <span className="stat-label">{t('work.languages')} · PT / EN / DE</span>
           </div>
-        </motion.div>
+          <div className="stat">
+            <span className="stat-num">BR · DE · UK</span>
+            <span className="stat-label">Clients shipped for</span>
+          </div>
+        </div>
       </div>
     </section>
   );

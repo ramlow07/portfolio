@@ -88,7 +88,7 @@ const Hero = () => {
 
       <div className="shell hero-foot">
         <span data-hero-foot className="hero-status mono">
-          <span className="hero-dot" /> Available for work
+          <span className="hero-dot" /> {t('hero.status')}
         </span>
         <a data-hero-foot href="#work" className="hero-scroll mono" data-cursor="">
           Scroll

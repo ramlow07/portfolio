@@ -9,6 +9,11 @@ export function useEnable3D() {
   const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
+    // Debug/preview override: ?d3 forces the 3D on (used for screenshots).
+    if (new URLSearchParams(window.location.search).has('d3')) {
+      setEnabled(true);
+      return;
+    }
     const query = window.matchMedia(
       '(min-width: 860px) and (pointer: fine) and (prefers-reduced-motion: no-preference)'
     );

@@ -1,65 +1,93 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
+import { gsap, ScrollTrigger } from '../../lib/gsap';
+import { useMagnetic } from '../../hooks/useMagnetic';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
 import './Navigation.css';
 
+const SECTIONS = ['work', 'skills', 'about', 'contact'] as const;
+
+const NavLink = ({
+  section,
+  index,
+  active,
+  label,
+}: {
+  section: string;
+  index: number;
+  active: boolean;
+  label: string;
+}) => {
+  const ref = useMagnetic<HTMLAnchorElement>(0.4);
+  return (
+    <a
+      ref={ref}
+      href={`#${section}`}
+      data-cursor=""
+      className={`nav-link ${active ? 'active' : ''}`}
+    >
+      <span className="nav-link-index">0{index + 1}</span>
+      <span className="nav-link-label">{label}</span>
+    </a>
+  );
+};
+
 const Navigation = () => {
   const { t } = useTranslation();
-  const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
+  const navRef = useRef<HTMLElement>(null);
+  const progressRef = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState('');
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+    // Slide the nav in on load.
+    gsap.fromTo(
+      navRef.current,
+      { yPercent: -120 },
+      { yPercent: 0, duration: 1, ease: 'power4.out', delay: 0.2 }
+    );
 
-      const sections = ['work', 'skills', 'about', 'contact'];
-      const current = sections.find((section) => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
-        }
-        return false;
-      });
-      if (current) {
-        setActiveSection(current);
-      }
+    // Scroll progress bar.
+    const prog = ScrollTrigger.create({
+      start: 0,
+      end: 'max',
+      onUpdate: (self) => {
+        gsap.set(progressRef.current, { scaleX: self.progress });
+      },
+    });
+
+    // Active section tracking.
+    const triggers = SECTIONS.map((id) =>
+      ScrollTrigger.create({
+        trigger: `#${id}`,
+        start: 'top 45%',
+        end: 'bottom 45%',
+        onToggle: (self) => self.isActive && setActive(id),
+      })
+    );
+
+    return () => {
+      prog.kill();
+      triggers.forEach((t) => t.kill());
     };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <motion.nav
-      className={`navigation ${scrolled ? 'scrolled' : ''}`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5, ease: "circOut" }}
-    >
-      <div className="nav-container">
-        <div className="nav-logo">
-          LUAM<span className="keyword">.DEV</span>
-        </div>
+    <nav ref={navRef} className="navigation">
+      <div className="nav-inner">
+        <a href="#home" data-cursor="" className="nav-logo">
+          LR<span className="nav-logo-dot">.</span>
+        </a>
 
         <div className="nav-links">
-          {['work', 'skills', 'about', 'contact'].map((section) => (
-             <button
+          {SECTIONS.map((section, i) => (
+            <NavLink
               key={section}
-              onClick={() => scrollToSection(section)}
-              className={`nav-link ${activeSection === section ? 'active' : ''}`}
-            >
-              <span className="nav-index">0{['work', 'skills', 'about', 'contact'].indexOf(section) + 1}.</span> {t(`nav.${section}`)}
-            </button>
+              section={section}
+              index={i}
+              active={active === section}
+              label={t(`nav.${section}`)}
+            />
           ))}
         </div>
 
@@ -68,7 +96,10 @@ const Navigation = () => {
           <LanguageSwitcher />
         </div>
       </div>
-    </motion.nav>
+      <div className="nav-progress">
+        <div ref={progressRef} className="nav-progress-bar" />
+      </div>
+    </nav>
   );
 };
 

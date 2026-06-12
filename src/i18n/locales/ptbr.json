@@ -1,8 +1,9 @@
 {
   "hero": {
-    "greeting": "Oi! Eu sou Luam Ramlow.",
-    "title": "Engenheiro Fullstack. Solucionador de Problemas. Poliglota.",
-    "subtitle": "Construindo soluções inovadoras para fintech na DDC Company."
+    "greeting": "Luam Ramlow — Engenheiro de Software Sênior",
+    "title": "Eu construo software que move dinheiro.",
+    "subtitle": "Engenheiro de Software Sênior na Veepag, uma fintech de pagamentos brasileira. Disponível para trabalho remoto no mundo todo.",
+    "status": "Disponível · Remoto · UTC−3"
   },
   "nav": {
     "work": "Trabalho",
@@ -11,39 +12,56 @@
     "contact": "Contato"
   },
   "work": {
-    "title": "Minha Jornada",
-    "subtitle": "Do código ao impacto",
+    "title": "Trabalho",
+    "subtitle": "Do primeiro commit ao fintech em produção",
     "current": "Atualmente",
-    "currentRole": "Engenheiro de Software Fullstack na DDC Company",
-    "journey": "A Jornada",
-    "currentDescription": "Desenvolvendo soluções de ponta para corretores e investidores em uma startup baseada em São Paulo. Construindo soluções que impactam vidas através da tecnologia.",
-    "journeyDescription": "Minha jornada na engenharia de software começou em 2021, enquanto vivia na Alemanha. O que começou como curiosidade se transformou em paixão, levando-me a fazer a transição de carreira para o desenvolvimento de software. Hoje, na DDC Company, combino minhas habilidades técnicas com minha experiência multicultural para criar soluções que conectam mercados. Já contribuí para projetos de clientes no Brasil, Alemanha e Reino Unido.",
-    "experience": "3+ anos na Alemanha",
-    "languages": "Fluente em 3 idiomas",
+    "currentRole": "Engenheiro de Software Sênior · Veepag",
+    "journey": "A jornada",
+    "currentDescription": "Um dos primeiros engenheiros da Veepag, uma fintech de pagamentos brasileira que processa mais de R$5M em volume mensal. Sou responsável pela arquitetura, pelas APIs e pelo produto que o cliente realmente usa.",
+    "journeyDescription": "Construo software desde 2021. Desde então entreguei para clientes no Brasil, na Alemanha e no Reino Unido — e evoluí de escrever funcionalidades para assumir a arquitetura e as decisões técnicas.",
+    "experience": "Construindo software desde 2021",
+    "languages": "Atua em EN · PT · DE",
     "programming": "Desde 2021"
   },
   "skills": {
-    "title": "Habilidades & Tecnologias",
-    "subtitle": "Ferramentas que uso para construir coisas incríveis",
+    "title": "Habilidades",
+    "subtitle": "As ferramentas que uso para entregar e escalar.",
     "frontend": "Frontend",
     "backend": "Backend",
-    "tools": "Ferramentas & Outros"
+    "tools": "Ferramentas & Infra"
+  },
+  "selectedWork": {
+    "title": "Trabalhos selecionados",
+    "subtitle": "O que entreguei na Veepag",
+    "payments": "Pagamentos",
+    "compliance": "Compliance",
+    "engineering": "Engenharia",
+    "items": {
+      "funding": "Adição de saldo — construí o fluxo de recarga de crédito, o caminho pelo qual os usuários colocam dinheiro na plataforma.",
+      "invoicing": "Faturamento — entreguei a emissão automática de notas para as transações da plataforma.",
+      "kyc": "Onboarding com KYC — construí a verificação de identidade para que a plataforma onboarde usuários em conformidade.",
+      "review": "Revisão cadastral periódica — automatizei a reverificação recorrente dos cadastros, sem trabalho manual.",
+      "frontend": "Arquitetura de frontend — introduzi um novo padrão em TypeScript que deixou o frontend mais type-safe, consistente e ágil de evoluir.",
+      "reliability": "Confiabilidade da plataforma — sou responsável pela manutenção e estabilidade do sistema em produção."
+    }
   },
   "about": {
-    "title": "Sobre Mim",
+    "title": "Sobre",
     "subtitle": "Além do código",
-    "intro": "Sou um engenheiro de software fullstack que acredita que um ótimo código começa com um ótimo raciocínio. Foco em entender as necessidades do negócio, tomar decisões arquiteturais estratégicas e construir soluções que entregam valor real. Para mim, engenharia é sobre resolver problemas—não apenas escrever código.",
-    "polyglot": "Como poliglota falando português, inglês e alemão, trago uma perspectiva multicultural única para cada projeto. Meus 3 anos morando na Alemanha me ensinaram mais do que apenas outro idioma—me ensinaram a me adaptar, colaborar entre culturas e pensar globalmente.",
-    "passion": "Fora do trabalho, sou pai e praticante dedicado de Jiu-Jitsu Brasileiro. O treino mantém minha mente afiada e meus instintos de resolução de problemas refinados. A disciplina dos tatames se transfere diretamente para o meu código. Melhoria contínua é um estilo de vida, não apenas uma meta profissional.",
-    "location": "Baseado no Brasil 🇧🇷 | Morei na Alemanha 🇩🇪"
+    "intro": "Me importo com software que resolve problemas reais, não apenas código que roda. Penso no negócio, tomo decisões de arquitetura deliberadas e entrego coisas que se sustentam em produção.",
+    "polyglot": "Sênior o suficiente para assumir as decisões difíceis, mão na massa o suficiente para entregá-las. Trabalho de forma assíncrona, comunico com clareza e trato seus prazos como meus.",
+    "passion": "Fora do trabalho, treino Jiu-Jitsu Brasileiro e sou pai — ambos são prática diária de paciência e progresso incremental.",
+    "location": "No Brasil · UTC−3",
+    "workTag": "Como eu trabalho",
+    "offClockTag": "Fora do expediente"
   },
   "contact": {
-    "title": "Vamos Conectar",
-    "subtitle": "Estou sempre aberto a novas oportunidades e colaborações",
+    "title": "Vamos conversar",
+    "subtitle": "Aberto a contratos remotos e posições full-time.",
     "whatsapp": "Mensagem no WhatsApp",
-    "email": "Enviar Email",
+    "email": "Enviar email",
     "github": "Ver GitHub",
     "linkedin": "Conectar no LinkedIn",
-    "languages": "Posso me comunicar em português, inglês e alemão"
+    "languages": "Aberto a contratos remotos e posições full-time. Atuo em português, inglês e alemão."
   }
 }

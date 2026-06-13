@@ -1,4 +1,6 @@
 import './i18n/config';
+import SmoothScroll from './components/SmoothScroll/SmoothScroll';
+import Cursor from './components/Cursor/Cursor';
 import Navigation from './components/Navigation/Navigation';
 import Hero from './components/Hero/Hero';
 import Work from './components/Work/Work';
@@ -10,8 +12,9 @@ import './App.css';
 
 function App() {
   return (
-    <div className="app">
-      <div className="noise-overlay" />
+    <SmoothScroll>
+      <div className="grain" aria-hidden />
+      <Cursor />
       <Navigation />
       <main>
         <Hero />
@@ -21,7 +24,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
-    </div>
+    </SmoothScroll>
   );
 }
 

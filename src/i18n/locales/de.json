@@ -1,8 +1,9 @@
 {
   "hero": {
-    "greeting": "Hallo, ich bin Luam Ramlow",
-    "title": "Fullstack Engineer. Problemlöser. Polyglott.",
-    "subtitle": "Entwicklung innovativer Lösungen für Fintech bei DDC Company"
+    "greeting": "Luam Ramlow — Software Engineer",
+    "title": "Ich baue Software, die Geld bewegt.",
+    "subtitle": "Software Engineer bei Veepag, einem brasilianischen Payments-Startup. Verfügbar für Remote-Arbeit, weltweit.",
+    "status": "Verfügbar · Remote · UTC−3"
   },
   "nav": {
     "work": "Arbeit",
@@ -11,39 +12,88 @@
     "contact": "Kontakt"
   },
   "work": {
-    "title": "Meine Reise",
-    "subtitle": "Vom Code zur Wirkung",
+    "title": "Arbeit",
+    "subtitle": "Vom ersten Commit zum Fintech in Produktion",
     "current": "Aktuell",
-    "currentRole": "Fullstack Software Engineer bei DDC Company",
-    "journey": "Die Reise",
-    "currentDescription": "Entwicklung modernster Lösungen für Makler und Investoren in einem Startup in São Paulo. Entwicklung von Lösungen, die Leben durch Technologie beeinflussen.",
-    "journeyDescription": "Meine Reise in der Softwareentwicklung begann 2021, als ich in Deutschland lebte. Was als Neugier begann, verwandelte sich in Leidenschaft und führte mich dazu, meine Karriere in die Softwareentwicklung zu verlagern. Heute kombiniere ich bei DDC Company meine technischen Fähigkeiten mit meiner multikulturellen Erfahrung, um Lösungen zu schaffen, die Märkte verbinden. Ich habe zu Projekten für Kunden in Brasilien, Deutschland und dem Vereinigten Königreich beigetragen.",
-    "experience": "3+ Jahre in Deutschland",
-    "languages": "Fließend in 3 Sprachen",
-    "programming": "Seit 2021"
+    "currentRole": "Software Engineer · Veepag",
+    "journey": "Der Weg",
+    "currentDescription": "Einer der ersten Engineers bei Veepag, einem brasilianischen Payments-Startup mit über R$5M monatlichem Volumen. Ich verantworte Architektur, APIs und das Produkt, das Kunden tatsächlich nutzen.",
+    "journeyDescription": "Ich entwickle Software seit 2021. Seitdem habe ich für Kunden in Brasilien, Deutschland und Großbritannien geliefert — und mich vom Schreiben von Features hin zur Verantwortung für Architektur und technische Entscheidungen entwickelt.",
+    "experience": "Software-Entwicklung seit 2021",
+    "languages": "Arbeitet in EN · PT · DE",
+    "programming": "Seit 2021",
+    "stats": {
+      "years": "Jahre Software-Entwicklung",
+      "volume": "Monatsvolumen bei Veepag",
+      "clients": "Kunden beliefert"
+    },
+    "history": {
+      "title": "Erfahrung",
+      "subtitle": "Wo ich geliefert habe",
+      "roles": {
+        "veepag": {
+          "company": "Veepag",
+          "role": "Software Engineer",
+          "period": "2026 — Heute",
+          "context": "Payments-Fintech · Florianópolis · Remote",
+          "description": "Zweiter Engineer bei einem brasilianischen Payments-Startup mit über R$5M monatlichem Volumen. Ich verantworte Architektur, APIs sowie die KYC- und Zahlungsflüsse, die in Produktion laufen."
+        },
+        "ddc": {
+          "company": "DDC Company",
+          "role": "Fullstack Software Engineer",
+          "period": "2025 — 2026",
+          "context": "Investment-Fintech · São Paulo · Remote",
+          "description": "Verantwortete die Analytik von Anfang bis Ende bei einem Fintech für Makler und Investoren. Konzipierte und lieferte BI-Module, die Marktrohdaten in die Kennzahlen verwandelten, mit denen das Management Ergebnisse verfolgte und Entscheidungen traf. Baute full-stack auf einer BFF-Architektur und verantwortete die PostgreSQL-Ebene darunter — Datenmodellierung und Query-Tuning, die die Dashboards auch bei wachsenden Datenmengen schnell hielten."
+        },
+        "borderless": {
+          "company": "Borderless Coding",
+          "role": "Software Engineer",
+          "period": "2021 — 2025",
+          "context": "Engineering-Kollektiv · London · Remote",
+          "description": "Leitete ein Team aus drei Entwicklern bei Borderless, einem in London ansässigen Engineering-Kollektiv. Ich definierte den Projektumfang, führte die Dailies und hielt das Team am Liefern — und wir brachten eine Job-Tracking-Anwendung heraus. Das anspruchsvollste Frontend baute ich selbst, darunter eine Coding-Plattform im NeetCode-Stil."
+        }
+      }
+    }
   },
   "skills": {
-    "title": "Fähigkeiten & Technologien",
-    "subtitle": "Werkzeuge, die ich verwende, um großartige Dinge zu bauen",
+    "title": "Fähigkeiten",
+    "subtitle": "Die Werkzeuge, mit denen ich liefere und skaliere.",
     "frontend": "Frontend",
     "backend": "Backend",
-    "tools": "Werkzeuge & Andere"
+    "tools": "Tools & Infra"
+  },
+  "selectedWork": {
+    "title": "Ausgewählte Arbeiten",
+    "subtitle": "Was ich bei Veepag geliefert habe",
+    "payments": "Payments",
+    "compliance": "Compliance",
+    "engineering": "Engineering",
+    "items": {
+      "funding": "Kontoaufladung — den Top-up-Flow gebaut, über den Nutzer Guthaben auf die Plattform bringen.",
+      "invoicing": "Rechnungsstellung — automatisierte Rechnungserstellung für Plattform-Transaktionen geliefert.",
+      "kyc": "KYC-Onboarding — Identitätsprüfung gebaut, damit die Plattform Nutzer regelkonform onboardet.",
+      "review": "Periodische Datenprüfung — die wiederkehrende Re-Verifizierung der Nutzerdaten automatisiert, ganz ohne manuelle Arbeit.",
+      "frontend": "Frontend-Architektur — ein neues TypeScript-Pattern eingeführt, das das Frontend typsicherer, konsistenter und schneller erweiterbar macht.",
+      "reliability": "Plattform-Zuverlässigkeit — verantworte Wartung und Stabilität des Produktionssystems."
+    }
   },
   "about": {
-    "title": "Über Mich",
+    "title": "Über mich",
     "subtitle": "Jenseits des Codes",
-    "intro": "Ich bin ein Fullstack-Softwareingenieur, der glaubt, dass großartiger Code mit großartigem Denken beginnt. Ich konzentriere mich darauf, Geschäftsanforderungen zu verstehen, strategische Architekturentscheidungen zu treffen und Lösungen zu entwickeln, die echten Mehrwert liefern. Für mich geht es beim Engineering um das Lösen von Problemen—nicht nur ums Schreiben von Code.",
-    "polyglot": "Als Polyglott, der Portugiesisch, Englisch und Deutsch spricht, bringe ich eine einzigartige multikulturelle Perspektive in jedes Projekt ein. Meine 3 Jahre in Deutschland haben mir mehr als nur eine weitere Sprache beigebracht—sie haben mir beigebracht, mich anzupassen, kulturübergreifend zusammenzuarbeiten und global zu denken.",
-    "passion": "Außerhalb der Arbeit bin ich Vater und engagierter Brazilian Jiu-Jitsu-Praktizierender. Das Training hält meinen Geist scharf und meine Problemlösungsinstinkte geschärft. Die Disziplin von der Matte überträgt sich direkt auf meinen Code. Kontinuierliche Verbesserung ist ein Lebensstil, nicht nur ein Karriereziel.",
-    "location": "Ansässig in Brasilien 🇧🇷 | Lebte in Deutschland 🇩🇪"
+    "intro": "Mir geht es um Software, die echte Probleme löst, nicht nur um Code, der läuft. Ich denke ans Geschäft, treffe bewusste Architekturentscheidungen und liefere Dinge, die in Produktion bestehen.",
+    "polyglot": "Senior genug, um die schwierigen Entscheidungen zu treffen, und praktisch genug, um sie umzusetzen. Ich arbeite asynchron, kommuniziere klar und behandle deine Deadlines wie meine.",
+    "passion": "Außerhalb der Arbeit trainiere ich Brazilian Jiu-Jitsu und bin Vater — beides ist tägliche Übung in Geduld und schrittweisem Fortschritt.",
+    "location": "In Florianópolis · UTC−3",
+    "workTag": "Wie ich arbeite",
+    "offClockTag": "Nach Feierabend"
   },
   "contact": {
-    "title": "Lass uns verbinden",
-    "subtitle": "Ich bin immer offen für neue Möglichkeiten und Zusammenarbeit",
+    "title": "Lass uns sprechen",
+    "subtitle": "Offen für Remote-Verträge und Festanstellungen.",
     "whatsapp": "Nachricht auf WhatsApp",
     "email": "E-Mail senden",
     "github": "GitHub ansehen",
     "linkedin": "Auf LinkedIn verbinden",
-    "languages": "Ich kann auf Portugiesisch, Englisch und Deutsch kommunizieren"
+    "languages": "Offen für Remote-Verträge und Festanstellungen. Ich arbeite auf Englisch, Portugiesisch und Deutsch."
   }
 }

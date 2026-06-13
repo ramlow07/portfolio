@@ -21,15 +21,15 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     if (storedTheme) {
       return storedTheme as Theme;
     }
-    // Check for system preference
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark';
+    // Default to the bold-dark identity.
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      return 'light';
     }
-    return 'light';
+    return 'dark';
   });
 
   useEffect(() => {
-    document.body.className = theme === 'dark' ? 'dark-mode' : '';
+    document.body.classList.toggle('light-mode', theme === 'light');
     localStorage.setItem('theme', theme);
   }, [theme]);
 

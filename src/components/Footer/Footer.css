@@ -1,41 +1,38 @@
 .footer {
-  background: var(--color-void);
-  border-top: 1px solid var(--border-subtle);
-  padding: var(--spacing-xl) 0;
-  margin-top: 0;
-  position: relative;
-  z-index: 10;
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+  padding-block: clamp(2.5rem, 6vw, 4rem);
 }
 
-.footer-content {
-  text-align: center;
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-mark {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  letter-spacing: 0.04em;
+}
+
+.footer-meta {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sm);
-  align-items: center;
+  gap: 0.4rem;
+  text-align: center;
 }
+.footer-meta p { color: var(--fg-faint); }
 
-.footer-text {
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  color: var(--color-text-secondary);
-  margin-bottom: 0;
+.footer-top {
+  color: var(--fg-dim);
+  transition: color 0.35s var(--ease-out);
 }
+.footer-top:hover { color: var(--flame); }
 
-.footer-subtext {
-  font-family: var(--font-display);
-  font-size: 0.8rem;
-  color: var(--color-text-tertiary);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.footer-subtext span {
-  color: var(--color-acid);
-}
-
-@media (max-width: 768px) {
-  .footer {
-    padding-bottom: calc(var(--spacing-xl) + 80px); /* Account for mobile nav */
-  }
+@media (max-width: 700px) {
+  .footer-inner { flex-direction: column; text-align: center; }
+  .footer-meta { text-align: center; }
 }

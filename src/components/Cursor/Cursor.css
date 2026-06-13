@@ -1,0 +1,28 @@
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  /* pure white + difference blend = always inverts the backdrop,
+     so it stays visible in both dark and light themes */
+  background: #fff;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transition: width 0.3s var(--ease-out), height 0.3s var(--ease-out);
+  mix-blend-mode: difference;
+}
+
+.cursor-dot.is-active {
+  width: 36px;
+  height: 36px;
+}
+
+@media (pointer: coarse) {
+  .cursor-dot { display: none; }
+}
+@media (pointer: fine) {
+  body { cursor: none; }
+  a, button, [data-cursor] { cursor: none; }
+}

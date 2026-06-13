@@ -1,92 +1,99 @@
+import { Suspense, lazy, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
+import { gsap, ScrollTrigger, SplitText } from '../../lib/gsap';
+import { useHero3D } from '../../hooks/useEnable3D';
 import './Hero.css';
+
+const Coin = lazy(() => import('../Hero3D/Coin/Coin'));
 
 const Hero = () => {
   const { t } = useTranslation();
+  const root = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const { enabled: enable3D, quality } = useHero3D();
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3
-      }
-    }
-  };
+  useEffect(() => {
+    const el = root.current;
+    if (!el) return;
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6
-      }
-    }
-  };
+    const ctx = gsap.context(() => {
+      // Calm line-by-line mask reveal for the headline.
+      const split = new SplitText(titleRef.current, {
+        type: 'lines',
+        linesClass: 'hero-line',
+      });
+      gsap.set(split.lines, { yPercent: 110 });
+
+      const tl = gsap.timeline({ delay: 0.3 });
+      tl.from('[data-hero-fade]', {
+        opacity: 0,
+        y: 16,
+        duration: 0.9,
+        ease: 'power2.out',
+        stagger: 0.1,
+      })
+        .to(
+          split.lines,
+          { yPercent: 0, duration: 1.1, ease: 'power4.out', stagger: 0.12 },
+          '-=0.5'
+        )
+        .from(
+          '[data-hero-foot]',
+          { opacity: 0, y: 16, duration: 0.8, ease: 'power2.out', stagger: 0.1 },
+          '-=0.7'
+        );
+
+      // Subtle drift on the text as you scroll away — restraint, not spectacle.
+      gsap.to('.hero-text', {
+        yPercent: -8,
+        opacity: 0,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true,
+        },
+      });
+
+      document.fonts?.ready.then(() => ScrollTrigger.refresh());
+    }, el);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <section className="hero" id="home">
-      <div className="hero-background">
-        <div className="hero-grid"></div>
-      </div>
-      
-      <div className="container">
-        <motion.div 
-          className="hero-content"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <div className="hero-text-content">
-            <motion.span variants={itemVariants} className="hero-eyebrow">
-              {t('hero.greeting') || 'Hello World'}
-            </motion.span>
-            
-            <motion.h1 variants={itemVariants} className="hero-title">
-              DIGITAL <br />
-              <span className="highlight" data-text="ALCHEMIST">ALCHEMIST</span>
-            </motion.h1>
-            
-            <motion.p variants={itemVariants} className="hero-description">
-              {t('hero.subtitle') || 'Crafting immersive digital experiences with precision and creativity.'}
-            </motion.p>
+    <section ref={root} id="home" className="hero">
+      <div className="shell hero-layout">
+        <div className="hero-text">
+          <span data-hero-fade className="eyebrow">{t('hero.greeting')}</span>
 
-            <motion.div variants={itemVariants} className="hero-cta-group">
-              <a href="#work" className="btn btn-primary">
-                {t('nav.work') || 'View Work'}
-              </a>
-              <a href="#contact" className="btn btn-secondary">
-                {t('nav.contact') || 'Contact Me'}
-              </a>
-            </motion.div>
-          </div>
+          <h1 ref={titleRef} className="hero-title">
+            {t('hero.title')}
+          </h1>
 
-          <motion.div 
-            className="hero-visual"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-          >
-            <div className="hero-visual-inner">
-               <img src="/profilepic.jpeg" alt="Luam Ramlow" />
-               <div className="hero-visual-decoration"></div>
-            </div>
-          </motion.div>
-        </motion.div>
+          <p data-hero-fade className="hero-sub">{t('hero.subtitle')}</p>
+        </div>
+
+        <div className="hero-visual" aria-hidden>
+          {enable3D ? (
+            <Suspense fallback={<div className="hero-fallback" />}>
+              <Coin quality={quality} finish="obsidian" edge="reeded" />
+            </Suspense>
+          ) : (
+            <div className="hero-fallback" />
+          )}
+        </div>
       </div>
 
-      <motion.div 
-        className="scroll-indicator"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-      >
-        <span>SCROLL</span>
-        <div className="scroll-line"></div>
-      </motion.div>
+      <div className="shell hero-foot">
+        <span data-hero-foot className="hero-status mono">
+          <span className="hero-dot" /> {t('hero.status')}
+        </span>
+        <a data-hero-foot href="#work" className="hero-scroll mono" data-cursor="">
+          Scroll
+        </a>
+      </div>
     </section>
   );
 };

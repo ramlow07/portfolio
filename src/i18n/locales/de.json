@@ -21,7 +21,34 @@
     "journeyDescription": "Ich entwickle Software seit 2021. Seitdem habe ich für Kunden in Brasilien, Deutschland und Großbritannien geliefert — und mich vom Schreiben von Features hin zur Verantwortung für Architektur und technische Entscheidungen entwickelt.",
     "experience": "Software-Entwicklung seit 2021",
     "languages": "Arbeitet in EN · PT · DE",
-    "programming": "Seit 2021"
+    "programming": "Seit 2021",
+    "history": {
+      "title": "Erfahrung",
+      "subtitle": "Wo ich geliefert habe",
+      "roles": {
+        "veepag": {
+          "company": "Veepag",
+          "role": "Senior Software Engineer",
+          "period": "2026 — Heute",
+          "context": "Payments-Fintech · Brasilien",
+          "description": "Zweiter Engineer bei einem brasilianischen Payments-Startup mit über R$5M monatlichem Volumen. Ich verantworte Architektur, APIs sowie die KYC- und Zahlungsflüsse, die in Produktion laufen."
+        },
+        "ddc": {
+          "company": "DDC Company",
+          "role": "Fullstack Software Engineer",
+          "period": "2025 — 2026",
+          "context": "Investment-Fintech · São Paulo",
+          "description": "Verantwortete die Analytik von Anfang bis Ende bei einem Fintech für Makler und Investoren. Konzipierte und lieferte BI-Module, die Marktrohdaten in die Kennzahlen verwandelten, mit denen das Management Ergebnisse verfolgte und Entscheidungen traf. Baute full-stack auf einer BFF-Architektur und verantwortete die PostgreSQL-Ebene darunter — Datenmodellierung und Query-Tuning, die die Dashboards auch bei wachsenden Datenmengen schnell hielten."
+        },
+        "borderless": {
+          "company": "Borderless Coding",
+          "role": "Software Engineer",
+          "period": "2021 — 2025",
+          "context": "Engineering-Kollektiv · London",
+          "description": "Leitete ein Team aus drei Entwicklern bei Borderless, einem in London ansässigen Engineering-Kollektiv. Ich definierte den Projektumfang, führte die Dailies und hielt das Team am Liefern — und wir brachten eine Job-Tracking-Anwendung heraus. Das anspruchsvollste Frontend baute ich selbst, darunter eine Coding-Plattform im NeetCode-Stil."
+        }
+      }
+    }
   },
   "skills": {
     "title": "Fähigkeiten",

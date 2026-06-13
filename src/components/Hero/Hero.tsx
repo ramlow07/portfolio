@@ -4,7 +4,7 @@ import { gsap, ScrollTrigger, SplitText } from '../../lib/gsap';
 import { useHero3D } from '../../hooks/useEnable3D';
 import './Hero.css';
 
-const GlassMonolith = lazy(() => import('../Hero3D/GlassMonolith'));
+const Coin = lazy(() => import('../Hero3D/Coin/Coin'));
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -78,7 +78,7 @@ const Hero = () => {
         <div className="hero-visual" aria-hidden>
           {enable3D ? (
             <Suspense fallback={<div className="hero-fallback" />}>
-              <GlassMonolith quality={quality} />
+              <Coin quality={quality} finish="obsidian" edge="reeded" />
             </Suspense>
           ) : (
             <div className="hero-fallback" />

@@ -21,7 +21,34 @@
     "journeyDescription": "I've been building software since 2021. Since then I've shipped for clients across Brazil, Germany, and the UK — and grown from writing features to owning architecture and technical decisions.",
     "experience": "Building software since 2021",
     "languages": "Works in EN · PT · DE",
-    "programming": "Since 2021"
+    "programming": "Since 2021",
+    "history": {
+      "title": "Experience",
+      "subtitle": "Where I've shipped",
+      "roles": {
+        "veepag": {
+          "company": "Veepag",
+          "role": "Senior Software Engineer",
+          "period": "2026 — Now",
+          "context": "Payments fintech · Brazil",
+          "description": "Second engineer at a Brazilian payments startup processing R$5M+ in monthly volume. I own architecture, APIs, and the KYC and payment flows running in production."
+        },
+        "ddc": {
+          "company": "DDC Company",
+          "role": "Fullstack Software Engineer",
+          "period": "2025 — 2026",
+          "context": "Investment fintech · São Paulo",
+          "description": "Owned analytics end-to-end at a fintech serving brokers and investors. Designed and shipped BI modules that turned raw market data into the indicators leadership used to track results and steer decisions. Built full-stack on a BFF architecture and owned the PostgreSQL layer beneath it — data modeling and query tuning that kept the dashboards fast as the data grew."
+        },
+        "borderless": {
+          "company": "Borderless Coding",
+          "role": "Software Engineer",
+          "period": "2021 — 2025",
+          "context": "Engineering collective · London",
+          "description": "Led a three-developer team at Borderless, a London-based engineering collective. I set the project scope, ran the dailies, and kept the team shipping — and we delivered a job-tracking application. I owned the most demanding frontend work myself, including a NeetCode-style coding platform."
+        }
+      }
+    }
   },
   "skills": {
     "title": "Skills",

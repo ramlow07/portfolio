@@ -48,6 +48,11 @@
   width: 100%;
   height: clamp(360px, 52vh, 620px);
 }
+/* lazy Coin wrapper — fills the column, transparent canvas */
+.coin-canvas {
+  position: absolute;
+  inset: 0;
+}
 .hero-visual canvas {
   display: block;
   width: 100% !important;

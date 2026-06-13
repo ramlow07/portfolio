@@ -21,7 +21,34 @@
     "journeyDescription": "Construo software desde 2021. Desde então entreguei para clientes no Brasil, na Alemanha e no Reino Unido — e evoluí de escrever funcionalidades para assumir a arquitetura e as decisões técnicas.",
     "experience": "Construindo software desde 2021",
     "languages": "Atua em EN · PT · DE",
-    "programming": "Desde 2021"
+    "programming": "Desde 2021",
+    "history": {
+      "title": "Experiência",
+      "subtitle": "Onde eu entreguei",
+      "roles": {
+        "veepag": {
+          "company": "Veepag",
+          "role": "Engenheiro de Software Sênior",
+          "period": "2026 — Agora",
+          "context": "Fintech de pagamentos · Brasil",
+          "description": "Segundo engenheiro de uma startup de pagamentos brasileira que processa mais de R$5M em volume mensal. Sou responsável pela arquitetura, pelas APIs e pelos fluxos de KYC e pagamento que rodam em produção."
+        },
+        "ddc": {
+          "company": "DDC Company",
+          "role": "Engenheiro de Software Fullstack",
+          "period": "2025 — 2026",
+          "context": "Fintech de investimentos · São Paulo",
+          "description": "Fui responsável pela analítica de ponta a ponta em uma fintech que atende corretoras e investidores. Projetei e entreguei módulos de BI que transformaram dados brutos de mercado nos indicadores que a liderança usava para acompanhar resultados e tomar decisões. Construí full-stack sobre uma arquitetura BFF e fui dono da camada PostgreSQL por baixo — modelagem de dados e tuning de queries que mantiveram os dashboards rápidos conforme os dados cresciam."
+        },
+        "borderless": {
+          "company": "Borderless Coding",
+          "role": "Engenheiro de Software",
+          "period": "2021 — 2025",
+          "context": "Coletivo de engenharia · Londres",
+          "description": "Liderei um time de três desenvolvedores na Borderless, um coletivo de engenharia baseado em Londres. Defini o escopo do projeto, conduzi as dailies e mantive o time entregando — e lançamos uma aplicação de acompanhamento de vagas. Eu mesmo assumi o frontend mais exigente, incluindo uma plataforma de código no estilo NeetCode."
+        }
+      }
+    }
   },
   "skills": {
     "title": "Habilidades",

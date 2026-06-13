@@ -1,8 +1,8 @@
 {
   "hero": {
-    "greeting": "Luam Ramlow — Senior Software Engineer",
+    "greeting": "Luam Ramlow — Software Engineer",
     "title": "Ich baue Software, die Geld bewegt.",
-    "subtitle": "Senior Software Engineer bei Veepag, einem brasilianischen Payments-Startup. Verfügbar für Remote-Arbeit, weltweit.",
+    "subtitle": "Software Engineer bei Veepag, einem brasilianischen Payments-Startup. Verfügbar für Remote-Arbeit, weltweit.",
     "status": "Verfügbar · Remote · UTC−3"
   },
   "nav": {
@@ -15,36 +15,41 @@
     "title": "Arbeit",
     "subtitle": "Vom ersten Commit zum Fintech in Produktion",
     "current": "Aktuell",
-    "currentRole": "Senior Software Engineer · Veepag",
+    "currentRole": "Software Engineer · Veepag",
     "journey": "Der Weg",
     "currentDescription": "Einer der ersten Engineers bei Veepag, einem brasilianischen Payments-Startup mit über R$5M monatlichem Volumen. Ich verantworte Architektur, APIs und das Produkt, das Kunden tatsächlich nutzen.",
     "journeyDescription": "Ich entwickle Software seit 2021. Seitdem habe ich für Kunden in Brasilien, Deutschland und Großbritannien geliefert — und mich vom Schreiben von Features hin zur Verantwortung für Architektur und technische Entscheidungen entwickelt.",
     "experience": "Software-Entwicklung seit 2021",
     "languages": "Arbeitet in EN · PT · DE",
     "programming": "Seit 2021",
+    "stats": {
+      "years": "Jahre Software-Entwicklung",
+      "volume": "Monatsvolumen bei Veepag",
+      "clients": "Kunden beliefert"
+    },
     "history": {
       "title": "Erfahrung",
       "subtitle": "Wo ich geliefert habe",
       "roles": {
         "veepag": {
           "company": "Veepag",
-          "role": "Senior Software Engineer",
+          "role": "Software Engineer",
           "period": "2026 — Heute",
-          "context": "Payments-Fintech · Brasilien",
+          "context": "Payments-Fintech · Florianópolis · Remote",
           "description": "Zweiter Engineer bei einem brasilianischen Payments-Startup mit über R$5M monatlichem Volumen. Ich verantworte Architektur, APIs sowie die KYC- und Zahlungsflüsse, die in Produktion laufen."
         },
         "ddc": {
           "company": "DDC Company",
           "role": "Fullstack Software Engineer",
           "period": "2025 — 2026",
-          "context": "Investment-Fintech · São Paulo",
+          "context": "Investment-Fintech · São Paulo · Remote",
           "description": "Verantwortete die Analytik von Anfang bis Ende bei einem Fintech für Makler und Investoren. Konzipierte und lieferte BI-Module, die Marktrohdaten in die Kennzahlen verwandelten, mit denen das Management Ergebnisse verfolgte und Entscheidungen traf. Baute full-stack auf einer BFF-Architektur und verantwortete die PostgreSQL-Ebene darunter — Datenmodellierung und Query-Tuning, die die Dashboards auch bei wachsenden Datenmengen schnell hielten."
         },
         "borderless": {
           "company": "Borderless Coding",
           "role": "Software Engineer",
           "period": "2021 — 2025",
-          "context": "Engineering-Kollektiv · London",
+          "context": "Engineering-Kollektiv · London · Remote",
           "description": "Leitete ein Team aus drei Entwicklern bei Borderless, einem in London ansässigen Engineering-Kollektiv. Ich definierte den Projektumfang, führte die Dailies und hielt das Team am Liefern — und wir brachten eine Job-Tracking-Anwendung heraus. Das anspruchsvollste Frontend baute ich selbst, darunter eine Coding-Plattform im NeetCode-Stil."
         }
       }
@@ -78,7 +83,7 @@
     "intro": "Mir geht es um Software, die echte Probleme löst, nicht nur um Code, der läuft. Ich denke ans Geschäft, treffe bewusste Architekturentscheidungen und liefere Dinge, die in Produktion bestehen.",
     "polyglot": "Senior genug, um die schwierigen Entscheidungen zu treffen, und praktisch genug, um sie umzusetzen. Ich arbeite asynchron, kommuniziere klar und behandle deine Deadlines wie meine.",
     "passion": "Außerhalb der Arbeit trainiere ich Brazilian Jiu-Jitsu und bin Vater — beides ist tägliche Übung in Geduld und schrittweisem Fortschritt.",
-    "location": "In Brasilien · UTC−3",
+    "location": "In Florianópolis · UTC−3",
     "workTag": "Wie ich arbeite",
     "offClockTag": "Nach Feierabend"
   },

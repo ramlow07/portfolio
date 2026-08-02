@@ -1,0 +1,24 @@
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: var(--fg);
+  opacity: 0.4;
+  transition: opacity 0.35s var(--ease-out);
+}
+
+.lang-btn:hover { opacity: 0.8; }
+.lang-btn.active { opacity: 1; }
+.lang-btn.active .lang-label { color: var(--flame); }
+
+.lang-flag { display: none; }
+.lang-label { font-size: inherit; }

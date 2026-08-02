@@ -1,0 +1,112 @@
+.work {
+  background: var(--bg);
+  padding-block: clamp(6rem, 16vh, 13rem);
+}
+
+.work-head {
+  margin-bottom: clamp(4rem, 9vw, 7rem);
+}
+.work-head .eyebrow { margin-bottom: 1.5rem; }
+.work-heading {
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  max-width: 16ch;
+}
+
+/* ---- timeline ---- */
+.timeline {
+  position: relative;
+  padding-left: clamp(1.5rem, 5vw, 4rem);
+}
+.timeline-line {
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  bottom: 0.6rem;
+  width: 1px;
+  background: var(--flame);
+  transform-origin: top;
+  opacity: 0.6;
+}
+
+.entry {
+  position: relative;
+  display: grid;
+  grid-template-columns: 12rem 1fr;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  padding-block: clamp(2.5rem, 6vw, 4.5rem);
+  border-bottom: 1px solid var(--line-soft);
+}
+.entry:last-child { border-bottom: none; }
+
+/* dot on the line */
+.entry::before {
+  content: '';
+  position: absolute;
+  left: calc(clamp(1.5rem, 5vw, 4rem) * -1 - 3px);
+  top: calc(clamp(2.5rem, 6vw, 4.5rem) + 0.4rem);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--flame);
+}
+
+.entry-year {
+  color: var(--fg-faint);
+  padding-top: 0.4rem;
+}
+
+.entry-tag { display: inline-block; margin-bottom: 1rem; color: var(--fg-dim); }
+.entry-title {
+  font-size: clamp(1.4rem, 2.4vw, 2.1rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+.entry-text {
+  font-size: clamp(1rem, 1.2vw, 1.12rem);
+  line-height: 1.6;
+  color: var(--fg-dim);
+  max-width: 56ch;
+}
+
+.entry-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.6rem;
+}
+.entry-chip {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--fg-dim);
+}
+
+/* ---- stats ---- */
+.work-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  margin-top: clamp(4rem, 9vw, 7rem);
+  padding-top: clamp(2.5rem, 5vw, 4rem);
+  border-top: 1px solid var(--line);
+}
+.stat { display: flex; flex-direction: column; gap: 0.7rem; }
+.stat-num {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+.stat-label { color: var(--fg-dim); font-size: 0.95rem; max-width: 22ch; }
+
+@media (max-width: 760px) {
+  .entry { grid-template-columns: 1fr; gap: 0.8rem; }
+  .entry-year { padding-top: 0; }
+  .work-stats { grid-template-columns: 1fr; gap: 2rem; }
+}

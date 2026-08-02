@@ -1,4 +1,4 @@
-2# Build Prompt — Premium 3D Coin for a Fintech Portfolio Hero
+# Build Prompt — Premium 3D Coin for a Fintech Portfolio Hero
 
 You are building a single, hero-centerpiece **3D coin** for a personal portfolio
 website. The coin is the visual anchor of the page and must look **expensive,

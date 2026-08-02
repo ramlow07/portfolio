@@ -1,68 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@300..600&display=swap');
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* Canvas */
+  --ink: #0a0a0c;
+  --ink-soft: #101013;
+  --ink-card: #131317;
+  --ink-line: rgba(242, 237, 227, 0.12);
+  --ink-line-soft: rgba(242, 237, 227, 0.06);
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Text */
+  --paper: #f2ede3;
+  --paper-dim: rgba(242, 237, 227, 0.55);
+  --paper-faint: rgba(242, 237, 227, 0.32);
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  /* Accent — used sparingly */
+  --flame: #ff4a2b;
+  --flame-soft: rgba(255, 74, 43, 0.12);
+  --flame-glow: rgba(255, 74, 43, 0.35);
+  --ember: #ff7a45;
+
+  /* Semantic mapping (bg/fg flip for light mode) */
+  --bg: var(--ink);
+  --bg-soft: var(--ink-soft);
+  --card: var(--ink-card);
+  --fg: var(--paper);
+  --fg-dim: var(--paper-dim);
+  --fg-faint: var(--paper-faint);
+  --line: var(--ink-line);
+  --line-soft: var(--ink-line-soft);
+  --accent: var(--flame);
+
+  /* Type — one refined grotesk family */
+  --font-display: 'Geist', system-ui, sans-serif;
+  --font-body: 'Geist', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, monospace;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* Layout */
+  --gutter: clamp(1.25rem, 4vw, 4rem);
+  --maxw: 1600px;
+
+  /* Z layers */
+  --z-bg: 0;
+  --z-base: 1;
+  --z-nav: 100;
+  --z-cursor: 9999;
+
+  color-scheme: dark;
+}
+
+/* Light mode: warm paper canvas, ink text — same flame accent */
+body.light-mode {
+  --bg: #f2ede3;
+  --bg-soft: #eae3d6;
+  --card: #ffffff;
+  --fg: #0a0a0c;
+  --fg-dim: rgba(10, 10, 12, 0.6);
+  --fg-faint: rgba(10, 10, 12, 0.35);
+  --line: rgba(10, 10, 12, 0.14);
+  --line-soft: rgba(10, 10, 12, 0.07);
+  color-scheme: light;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+/* Lenis smooth scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
 }
-a:hover {
-  color: #535bf2;
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: clip;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--fg);
+  line-height: 1.5;
+  overflow-x: hidden;
+  transition: background-color 0.6s var(--ease-out), color 0.6s var(--ease-out);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+}
+
+p {
+  color: var(--fg-dim);
+  max-width: 60ch;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background: none;
+  border: none;
+  color: inherit;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--flame);
+  color: var(--paper);
+}
+
+/* Hide default scrollbar look but keep functionality */
+::-webkit-scrollbar { width: 0; height: 0; }
+
+/* Shared layout helpers */
+.shell {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+.mono {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  color: var(--fg-dim);
+}
+
+.accent { color: var(--flame); }
+
+/* Section label (00 / TITLE) */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  color: var(--fg-dim);
+}
+.eyebrow::before {
+  content: '';
+  width: 2rem;
+  height: 1px;
+  background: var(--flame);
+}
+
+/* Grain overlay */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Reveal helper: hidden until GSAP releases it (avoids FOUC) */
+.reveal-line { overflow: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
 }

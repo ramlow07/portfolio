@@ -1,0 +1,56 @@
+.about {
+  background: var(--bg);
+  padding-block: clamp(6rem, 16vh, 14rem);
+}
+
+.about .eyebrow { margin-bottom: clamp(2.5rem, 6vw, 5rem); }
+
+.about-lead {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: clamp(1.45rem, 3.4vw, 3rem);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+  max-width: 24ch;
+  margin-bottom: clamp(4rem, 10vw, 8rem);
+}
+
+.about-support {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 6vw, 6rem);
+  padding-top: clamp(2rem, 5vw, 4rem);
+  border-top: 1px solid var(--line);
+}
+.about-col-tag {
+  display: block;
+  margin-bottom: 1.2rem;
+  color: var(--flame);
+}
+.about-col p {
+  font-size: clamp(1rem, 1.25vw, 1.15rem);
+  line-height: 1.6;
+  color: var(--fg-dim);
+}
+
+.about-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: clamp(3rem, 7vw, 6rem);
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+.about-location {
+  font-size: clamp(1.3rem, 2.4vw, 2rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+.about-langs { color: var(--fg-faint); }
+
+@media (max-width: 760px) {
+  .about-support { grid-template-columns: 1fr; gap: 2.5rem; }
+}

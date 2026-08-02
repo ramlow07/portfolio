@@ -1,0 +1,97 @@
+.contact {
+  position: relative;
+  background: var(--bg);
+  padding-block: clamp(6rem, 16vh, 14rem);
+  overflow: hidden;
+}
+
+.contact-glow {
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  translate: -50% 0;
+  width: 90vw;
+  height: 60vh;
+  background: radial-gradient(ellipse at center, var(--flame-soft) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact-shell { position: relative; z-index: 1; }
+.contact .eyebrow { margin-bottom: clamp(1.5rem, 4vw, 3rem); }
+
+.contact-title {
+  font-size: clamp(2.6rem, 8vw, 7rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+.contact-title .contact-line { overflow: hidden; padding-bottom: 0.08em; }
+
+.contact-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: clamp(2rem, 5vw, 3rem) 0 clamp(3rem, 8vw, 6rem);
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--fg);
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+  font-size: 0.8rem;
+  transition: border-color 0.4s var(--ease-out), color 0.4s var(--ease-out);
+}
+.contact-cta:hover {
+  border-color: var(--flame);
+  color: var(--flame);
+}
+
+.contact-rows {
+  border-top: 1px solid var(--line);
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-block: clamp(1.1rem, 2.5vw, 1.8rem);
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+.contact-row-label {
+  font-size: clamp(1.3rem, 2.8vw, 2.2rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  transition: color 0.35s var(--ease-out), transform 0.45s var(--ease-out);
+}
+.contact-row:hover .contact-row-label {
+  color: var(--flame);
+  transform: translateX(0.6rem);
+}
+.contact-row-meta {
+  margin-left: auto;
+  color: var(--fg-faint);
+  text-transform: none;
+  letter-spacing: 0.08em;
+}
+.contact-row-arrow {
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  color: var(--fg-faint);
+  transition: color 0.35s var(--ease-out), transform 0.45s var(--ease-out);
+}
+.contact-row:hover .contact-row-arrow {
+  color: var(--flame);
+  transform: translate(0.3rem, -0.3rem);
+}
+
+.contact-note {
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  max-width: 50ch;
+  color: var(--fg-dim);
+}
+
+@media (max-width: 600px) {
+  .contact-row-meta { display: none; }
+}

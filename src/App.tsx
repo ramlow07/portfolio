@@ -1,4 +1,5 @@
 import './i18n/config';
+import { Analytics } from '@vercel/analytics/react';
 import SmoothScroll from './components/SmoothScroll/SmoothScroll';
 import Cursor from './components/Cursor/Cursor';
 import Navigation from './components/Navigation/Navigation';
@@ -24,6 +25,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <Analytics />
     </SmoothScroll>
   );
 }

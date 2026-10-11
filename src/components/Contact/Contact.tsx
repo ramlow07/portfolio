@@ -5,7 +5,6 @@ import { useMagnetic } from '../../hooks/useMagnetic';
 import './Contact.css';
 
 const CONTACT = {
-  whatsapp: '+5548999430682',
   email: 'ramlowdev@proton.me',
   github: 'https://github.com/ramlow07',
   linkedin: 'https://www.linkedin.com/in/luam-ramlow-20b72723b',
@@ -15,12 +14,10 @@ const ContactRow = ({
   label,
   meta,
   href,
-  onClick,
 }: {
   label: string;
   meta: string;
   href?: string;
-  onClick?: () => void;
 }) => {
   const ref = useMagnetic<HTMLAnchorElement>(0.15);
   return (
@@ -29,7 +26,6 @@ const ContactRow = ({
       className="contact-row"
       data-cursor="↗"
       href={href}
-      onClick={onClick}
       target={href?.startsWith('http') ? '_blank' : undefined}
       rel="noopener noreferrer"
     >
@@ -45,11 +41,6 @@ const Contact = () => {
   const root = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const ctaRef = useMagnetic<HTMLAnchorElement>(0.4);
-
-  const handleWhatsApp = () => {
-    const msg = encodeURIComponent("Hi! I found your portfolio and would like to connect.");
-    window.open(`https://wa.me/${CONTACT.whatsapp}?text=${msg}`, '_blank');
-  };
 
   useEffect(() => {
     const el = root.current;
@@ -75,7 +66,7 @@ const Contact = () => {
         duration: 0.8,
         ease: 'power3.out',
         stagger: 0.1,
-        scrollTrigger: { trigger: '.contact-rows', start: 'top 85%' },
+        scrollTrigger: { trigger: '.contact-content', start: 'top 85%' },
       });
 
       document.fonts?.ready.then(() => ScrollTrigger.refresh());
@@ -88,10 +79,10 @@ const Contact = () => {
     <section ref={root} id="contact" className="contact">
       <div className="contact-glow" aria-hidden />
       <div className="shell contact-shell">
-        <span className="eyebrow">04 — {t('contact.title')}</span>
+        <span className="eyebrow">03 — {t('contact.title')}</span>
 
         <h2 ref={titleRef} className="contact-title">
-          Let's<br />build it
+          {t('contact.heading')}
         </h2>
 
         <a
@@ -101,24 +92,27 @@ const Contact = () => {
           className="contact-cta"
         >
           {t('contact.email')}
+          <span aria-hidden="true">↗</span>
         </a>
 
-        <div className="contact-rows">
+        <div className="contact-content">
           <div data-reveal>
-            <ContactRow label="WhatsApp" meta="Quick reply" onClick={handleWhatsApp} />
+            <h3 className="contact-building-title">{t('contact.githubHeading')}</h3>
+            <a
+              className="contact-building-link"
+              data-cursor="↗"
+              href={CONTACT.github}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t('contact.githubCta')}
+              <span aria-hidden="true">↗</span>
+            </a>
           </div>
-          <div data-reveal>
-            <ContactRow label="Email" meta={CONTACT.email} href={`mailto:${CONTACT.email}`} />
-          </div>
-          <div data-reveal>
-            <ContactRow label="GitHub" meta="@ramlow07" href={CONTACT.github} />
-          </div>
-          <div data-reveal>
-            <ContactRow label="LinkedIn" meta="Luam Ramlow" href={CONTACT.linkedin} />
+          <div className="contact-links" data-reveal>
+            <ContactRow label={t('contact.linkedin')} meta="Luam Ramlow" href={CONTACT.linkedin} />
           </div>
         </div>
-
-        <p className="contact-note" data-reveal>{t('contact.languages')}</p>
       </div>
     </section>
   );

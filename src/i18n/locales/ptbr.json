@@ -1,99 +1,50 @@
 {
   "hero": {
-    "greeting": "Luam Ramlow — Engenheiro de Software",
-    "title": "Eu construo software que move dinheiro.",
-    "subtitle": "Engenheiro de software fintech. Construo os sistemas de pagamento e compliance em que as pessoas confiam seu dinheiro.",
-    "status": "Remoto · Horário com sobreposição aos EUA"
+    "greeting": "Luam Ramlow — Engenheiro de Software Full Stack",
+    "title": "Transformo necessidades de produto em software confiável.",
+    "subtitle": "Atuo entre interfaces, APIs e sistemas de dados, levando funcionalidades dos requisitos à produção.",
+    "status": "Remoto · Horário com sobreposição aos EUA",
+    "experienceLink": "Experiência"
   },
   "nav": {
-    "work": "Trabalho",
-    "skills": "Habilidades",
-    "about": "Sobre",
+    "introduction": "Introdução",
+    "experience": "Experiência",
     "contact": "Contato"
   },
   "work": {
-    "title": "Trabalho",
-    "subtitle": "Do primeiro commit ao fintech em produção",
-    "current": "Atualmente",
-    "currentRole": "Engenheiro de Software · Veepag",
-    "journey": "A jornada",
-    "currentDescription": "Um dos primeiros engenheiros da Veepag, uma fintech de pagamentos brasileira que processa mais de $10M em volume mensal. Sou responsável pela arquitetura, pelas APIs e pelo produto que o cliente realmente usa.",
-    "journeyDescription": "Construo software desde 2021. Desde então entreguei para clientes no Brasil, na Alemanha e no Reino Unido — e evoluí de escrever funcionalidades para assumir a arquitetura e as decisões técnicas.",
-    "experience": "Construindo software desde 2021",
-    "languages": "Atua em EN · PT · DE",
-    "programming": "Desde 2021",
-    "stats": {
-      "years": "Anos construindo software",
-      "volume": "Volume mensal na Veepag",
-      "clients": "Clientes atendidos"
-    },
+    "title": "Experiência",
     "history": {
-      "title": "Experiência",
-      "subtitle": "Onde eu entreguei",
       "roles": {
         "veepag": {
           "company": "Veepag",
           "role": "Engenheiro de Software",
           "period": "2026 — Agora",
-          "context": "Fintech de pagamentos · Florianópolis · Remoto",
-          "description": "Segundo engenheiro de uma startup de pagamentos brasileira que processa mais de $10M em volume mensal. Sou responsável pela arquitetura, pelas APIs e pelos fluxos de KYC e pagamento que rodam em produção."
+          "description": "Implementei o KYC, a integração com Visa RDR usando requisições de API criptografadas, um SDK de checkout com tokenização de cartões e o sistema de faturamento da Veepag."
         },
         "ddc": {
           "company": "DDC Company",
           "role": "Engenheiro de Software Fullstack",
           "period": "2025 — 2026",
-          "context": "Fintech de investimentos · São Paulo · Remoto",
-          "description": "Fui responsável pela analítica de ponta a ponta em uma fintech que atende corretoras e investidores. Projetei e entreguei módulos de BI que transformaram dados brutos de mercado nos indicadores que a liderança usava para acompanhar resultados e tomar decisões. Construí full-stack sobre uma arquitetura BFF e fui dono da camada PostgreSQL por baixo — modelagem de dados e tuning de queries que mantiveram os dashboards rápidos conforme os dados cresciam."
+          "description": "Criei ferramentas de business intelligence que ajudam investidores a tomar decisões melhores com dados."
         },
         "borderless": {
           "company": "Borderless Coding",
           "role": "Engenheiro de Software",
-          "period": "2021 — 2025",
-          "context": "Coletivo de engenharia · Londres · Remoto",
-          "description": "Liderei um time de três desenvolvedores na Borderless, um coletivo de engenharia baseado em Londres. Defini o escopo do projeto, conduzi as dailies e mantive o time entregando — e lançamos uma aplicação de acompanhamento de vagas. Eu mesmo assumi o frontend mais exigente, incluindo uma plataforma de código no estilo NeetCode."
+          "period": "2023 — 2025",
+          "description": "Construí uma plataforma interativa de prática de programação e contribuí para o produto de tecnologia educacional, ajudando aspirantes a desenvolvedores a se preparar para entrevistas e organizar a busca por vagas."
         }
       }
     }
   },
-  "skills": {
-    "title": "Habilidades",
-    "subtitle": "As ferramentas que uso para entregar e escalar.",
-    "frontend": "Frontend",
-    "backend": "Backend",
-    "tools": "Ferramentas & Infra"
-  },
-  "selectedWork": {
-    "title": "Trabalhos selecionados",
-    "subtitle": "O que entreguei na Veepag",
-    "payments": "Pagamentos",
-    "compliance": "Compliance",
-    "engineering": "Engenharia",
-    "items": {
-      "funding": "Adição de saldo — construí o fluxo de recarga de crédito, o caminho pelo qual os usuários colocam dinheiro na plataforma.",
-      "invoicing": "Faturamento — entreguei a emissão automática de notas para as transações da plataforma.",
-      "kyc": "Onboarding com KYC — construí a verificação de identidade para que a plataforma onboarde usuários em conformidade.",
-      "review": "Revisão cadastral periódica — automatizei a reverificação recorrente dos cadastros, sem trabalho manual.",
-      "frontend": "Arquitetura de frontend — introduzi um novo padrão em TypeScript que deixou o frontend mais type-safe, consistente e ágil de evoluir.",
-      "reliability": "Confiabilidade da plataforma — sou responsável pela manutenção e estabilidade do sistema em produção."
-    }
-  },
-  "about": {
-    "title": "Sobre",
-    "subtitle": "Além do código",
-    "intro": "Me importo com software que resolve problemas reais, não apenas código que roda. Penso no negócio, tomo decisões de arquitetura deliberadas e entrego coisas que se sustentam em produção.",
-    "polyglot": "Sênior o suficiente para assumir as decisões difíceis, mão na massa o suficiente para entregá-las. Trabalho de forma assíncrona, comunico com clareza e trato seus prazos como meus.",
-    "passion": "Fora do trabalho, treino Jiu-Jitsu Brasileiro e sou pai — ambos são prática diária de paciência e progresso incremental.",
-    "location": "Em Florianópolis · UTC−3",
-    "workTag": "Como eu trabalho",
-    "offClockTag": "Fora do expediente"
-  },
   "contact": {
-    "title": "Vamos conversar",
-    "subtitle": "Aberto a contratos remotos e posições full-time.",
-    "whatsapp": "Mensagem no WhatsApp",
+    "title": "Contato",
+    "heading": "Vamos conversar.",
     "email": "Enviar email",
-    "github": "Ver GitHub",
-    "linkedin": "Conectar no LinkedIn",
-    "languages": "Aberto a contratos remotos e posições full-time. Atuo em português, inglês e alemão."
+    "githubHeading": "O que venho construindo",
+    "githubCta": "Dê uma olhada no meu GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "footer": {
+    "backToTop": "Voltar ao topo"
   }
 }

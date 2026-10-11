@@ -7,7 +7,6 @@ type Role = {
   company: string;
   role: string;
   period: string;
-  context: string;
   description: string;
 };
 
@@ -16,7 +15,7 @@ const ROLE_ORDER = ['veepag', 'ddc', 'borderless'] as const;
 const ROLE_CHIPS: Record<string, string[]> = {
   veepag: ['React', 'TypeScript', 'Node.js', 'KYC', 'Payments'],
   ddc: ['BFF', 'PostgreSQL', 'BI', 'React'],
-  borderless: ['React', 'TypeScript', 'Leadership'],
+  borderless: ['React', 'TypeScript'],
 };
 
 const Work = () => {
@@ -64,26 +63,22 @@ const Work = () => {
   }, []);
 
   return (
-    <section ref={root} id="work" className="work">
+    <section ref={root} id="experience" className="work">
       <div className="shell">
         <div className="work-head" data-reveal>
-          <span className="eyebrow">01 — {t('work.title')}</span>
-          <h2 className="work-heading">{t('work.subtitle')}</h2>
+          <h2 className="work-heading">{t('work.title')}</h2>
         </div>
 
         <div className="timeline">
           <span className="timeline-line" aria-hidden />
 
-          {ROLE_ORDER.map((id, i) => {
+          {ROLE_ORDER.map((id) => {
             const role = roles?.[id];
             if (!role) return null;
             return (
               <article className="entry" data-reveal key={id}>
                 <span className="entry-year mono">{role.period}</span>
                 <div className="entry-body">
-                  <span className={`entry-tag mono${i === 0 ? ' accent' : ''}`}>
-                    {role.context}
-                  </span>
                   <h3 className="entry-title">
                     {role.role} · {role.company}
                   </h3>
@@ -97,21 +92,6 @@ const Work = () => {
               </article>
             );
           })}
-        </div>
-
-        <div className="work-stats" data-reveal>
-          <div className="stat">
-            <span className="stat-num">5+</span>
-            <span className="stat-label">{t('work.stats.years')}</span>
-          </div>
-          <div className="stat">
-            <span className="stat-num">$10M+</span>
-            <span className="stat-label">{t('work.stats.volume')}</span>
-          </div>
-          <div className="stat">
-            <span className="stat-num">BR · DE · UK</span>
-            <span className="stat-label">{t('work.stats.clients')}</span>
-          </div>
         </div>
       </div>
     </section>

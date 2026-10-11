@@ -63,7 +63,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section ref={root} id="home" className="hero">
+    <section ref={root} id="introduction" className="hero">
       <div className="shell hero-layout">
         <div className="hero-text">
           <span data-hero-fade className="eyebrow">{t('hero.greeting')}</span>
@@ -90,8 +90,8 @@ const Hero = () => {
         <span data-hero-foot className="hero-status mono">
           <span className="hero-dot" /> {t('hero.status')}
         </span>
-        <a data-hero-foot href="#work" className="hero-scroll mono" data-cursor="">
-          Scroll
+        <a data-hero-foot href="#experience" className="hero-scroll mono" data-cursor="">
+          {t('hero.experienceLink')}
         </a>
       </div>
     </section>

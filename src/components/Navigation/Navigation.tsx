@@ -6,7 +6,7 @@ import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
 import './Navigation.css';
 
-const SECTIONS = ['work', 'skills', 'about', 'contact'] as const;
+const SECTIONS = ['introduction', 'experience', 'contact'] as const;
 
 const NavLink = ({
   section,
@@ -75,7 +75,7 @@ const Navigation = () => {
   return (
     <nav ref={navRef} className="navigation">
       <div className="nav-inner">
-        <a href="#home" data-cursor="" className="nav-logo">
+        <a href="#introduction" data-cursor="" className="nav-logo">
           LR<span className="nav-logo-dot">.</span>
         </a>
 

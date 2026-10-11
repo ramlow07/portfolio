@@ -196,7 +196,7 @@ function Scene({ count, nodes: nodeCount }: { count: number; nodes: number }) {
   // scroll → morph target
   useEffect(() => {
     const st = ScrollTrigger.create({
-      trigger: '#home',
+      trigger: '#introduction',
       start: 'top top',
       end: 'bottom top',
       scrub: true,

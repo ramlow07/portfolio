@@ -1,16 +1,12 @@
-import { Suspense, lazy, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { gsap, ScrollTrigger, SplitText } from '../../lib/gsap';
-import { useHero3D } from '../../hooks/useEnable3D';
 import './Hero.css';
-
-const Coin = lazy(() => import('../Hero3D/Coin/Coin'));
 
 const Hero = () => {
   const { t } = useTranslation();
   const root = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
-  const { enabled: enable3D, quality } = useHero3D();
 
   useEffect(() => {
     const el = root.current;
@@ -73,16 +69,6 @@ const Hero = () => {
           </h1>
 
           <p data-hero-fade className="hero-sub">{t('hero.subtitle')}</p>
-        </div>
-
-        <div className="hero-visual" aria-hidden>
-          {enable3D ? (
-            <Suspense fallback={<div className="hero-fallback" />}>
-              <Coin quality={quality} finish="obsidian" edge="reeded" />
-            </Suspense>
-          ) : (
-            <div className="hero-fallback" />
-          )}
         </div>
       </div>
 

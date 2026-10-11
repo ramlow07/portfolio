@@ -6,14 +6,18 @@
   justify-content: center;
 }
 
-/* split: text left, 3D object right */
 .hero-layout {
   width: 100%;
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  flex: 1;
+  display: flex;
   align-items: center;
-  gap: clamp(2rem, 5vw, 5rem);
-  padding-top: clamp(7rem, 16vh, 11rem);
+  justify-content: center;
+  padding-block: clamp(5rem, 10vh, 7rem) clamp(3rem, 6vh, 5rem);
+}
+
+.hero-text {
+  width: 100%;
+  text-align: center;
 }
 
 .hero .eyebrow {
@@ -26,7 +30,8 @@
   font-weight: 500;
   line-height: 1.02;
   letter-spacing: -0.035em;
-  max-width: 14ch;
+  max-width: 18ch;
+  margin-inline: auto;
   color: var(--fg);
 }
 .hero-title .hero-line {
@@ -35,46 +40,11 @@
 }
 
 .hero-sub {
-  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  margin: clamp(1.5rem, 3vw, 2.5rem) auto 0;
   font-size: clamp(1rem, 1.4vw, 1.25rem);
   color: var(--fg-dim);
   max-width: 36ch;
   line-height: 1.5;
-}
-
-/* ---- 3D / visual column ---- */
-.hero-visual {
-  position: relative;
-  width: 100%;
-  height: clamp(360px, 52vh, 620px);
-}
-/* lazy Coin wrapper — fills the column, transparent canvas */
-.coin-canvas {
-  position: absolute;
-  inset: 0;
-}
-.hero-visual canvas {
-  display: block;
-  width: 100% !important;
-  height: 100% !important;
-}
-
-/* Static fallback orb (mobile / reduced-motion / while loading) */
-.hero-fallback {
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: min(70%, 360px);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at 35% 30%,
-    rgba(242, 237, 227, 0.18),
-    rgba(255, 122, 69, 0.12) 45%,
-    transparent 70%
-  );
-  border: 1px solid var(--line);
-  backdrop-filter: blur(2px);
 }
 
 /* ---- baseline footer row ---- */
@@ -126,16 +96,3 @@
 }
 .hero-scroll:hover { color: var(--fg); }
 .hero-scroll:hover::after { transform: scaleX(1); }
-
-/* ---- mobile: stack, text first ---- */
-@media (max-width: 860px) {
-  .hero-layout {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-  .hero-visual {
-    height: clamp(240px, 38vh, 360px);
-    order: -1;
-  }
-  .hero-title { max-width: 18ch; }
-}
